@@ -1,0 +1,313 @@
+/* ========== BASE ========== */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #111;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== TYPOGRAPHIE ========== */
+.section-title {
+  font-size: 6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 800;
+  color: #111;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+/* ========== PROJECTS ========== */
+.projects-section {
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.projects-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.projects-column {
+  flex: 1 1 45%;
+}
+
+.column-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #7843E9;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.projects-grid:not(.six-cols) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-grid.six-cols {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* ========== PROJECT CARDS ========== */
+.project-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+  min-height: 200px;
+}
+
+.entreprise-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+  min-height: 200px;
+  text-align: center;
+}
+
+
+.entreprise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.entreprise-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.entreprise-card p {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  max-height: 6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  max-height: 6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  background-color: #7843E9;
+  color: white;
+  padding: 1.5rem 5rem;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
+  transition: transform 0.3s, background-color 0.3s;
+  margin-top: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #5e2fd2;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  font-size: 1.4rem;
+  color: #555;
+}
+
+/* ========== Modal ========== */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  color: #111;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.modal-content h3 {
+  margin-top: 1.5rem;
+  color: #7843E9;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+  .projects-grid.six-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid.six-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-grid:not(.six-cols) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-column {
+    width: 100%;
+  }
+
+  .projects-grid,
+  .projects-grid.six-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .projects-section {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .project-card {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+body.dark-mode .entreprise-card {
+  background-color: #2c2c2c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .entreprise-card p {
+  color: #ccc;
+}
+
+body.dark-mode .section-title,
+body.dark-mode .section-subtitle,
+body.dark-mode .project-card h3,
+body.dark-mode .entreprise-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .project-card p {
+  color: #ccc;
+}
+
+body.dark-mode .btn {
+  background-color: #5e2fd2;
+  color: #fff;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #555;
+}
+
+body.dark-mode nav a {
+  color: #fff;
+}
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #ccc;
+}
+
+
