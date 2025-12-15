@@ -104,6 +104,115 @@ section li {
   max-width: 800px;
   gap: 2rem;
 }
+/* ========== SKILL TIMELINE ========== */
+.skills-container {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px dashed #ccc;
+}
+
+.skills-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #7843E9;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills-title::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #7843E9;
+  border-radius: 50%;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* Style du badge de compétence */
+.skill-badge {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #7843E9;
+  color: #7843E9;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: help; /* Change le curseur pour indiquer l'info */
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: #7843E9;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(120, 67, 233, 0.3);
+}
+
+/* L'Infobulle (Tooltip) */
+.skill-badge::after {
+  content: attr(data-tooltip); /* Récupère le texte de l'attribut HTML */
+  position: absolute;
+  bottom: 125%; /* Place l'infobulle au-dessus */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  white-space: pre-wrap; /* Permet les sauts de ligne si besoin */
+  width: max-content;
+  max-width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Petite flèche sous l'infobulle */
+.skill-badge::before {
+  content: '';
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.skill-badge:hover::after,
+.skill-badge:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dark Mode support */
+body.dark-mode .skill-badge {
+  background-color: #2c2c2c;
+  color: #a881f3;
+  border-color: #a881f3;
+}
+body.dark-mode .skill-badge:hover {
+  background-color: #a881f3;
+  color: #121212;
+}
+
+
+
 /* ========== RESPONSIVE ========== */
 
 
