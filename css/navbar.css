@@ -1,35 +1,47 @@
 /* ========== HEADER NAVIGATION ========== */
 header {
   background-color: #7843E9;
-  padding: 1.5rem 0;
+  padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000; /* Toujours au-dessus */
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* CORRECTION ICI : On force l'alignement à droite */
+  justify-content: flex-end; 
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
+  height: 70px; /* Hauteur fixe pour éviter que la barre ne saute */
 }
 
-/* Toggle button aligné à droite */
+/* Bouton Mode Sombre */
 .navbar .toggle-theme {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  z-index: 10;
+  display: flex; 
+  align-items: center;
 }
 
 .navbar .toggle-theme img {
   width: 24px;
   height: 24px;
-  filter: brightness(0) invert(1); /* blanc sur fond violet */
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
 }
 
-/* Centrage du menu navigation */
+.navbar .toggle-theme:hover img {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Menu de navigation (Centré Absolu) */
 .navbar ul {
   position: absolute;
   left: 50%;
@@ -41,19 +53,21 @@ header {
   padding: 0;
 }
 
-/* Style des liens */
+/* Liens */
 .navbar a {
   color: white;
   font-size: 1.6rem;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
   position: relative;
   transition: all 0.3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .navbar a:hover {
   color: #ffffff;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .navbar a::after {
@@ -69,4 +83,17 @@ header {
 
 .navbar a:hover::after {
   width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: space-between; /* Sur mobile, on écarte le logo/menu */
+  }
+  .navbar ul {
+    position: relative; /* On remet le menu dans le flux sur mobile */
+    left: auto;
+    transform: none;
+    gap: 1.5rem;
+  }
 }
