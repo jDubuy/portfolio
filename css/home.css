@@ -1,191 +1,168 @@
-/* ========== BASE ========== */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
+/* Reset local */
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.5;
-  overflow-x: hidden;
-  background-color: #fff;
-  color: #111;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0; padding: 0; /* Base */
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* Structure Héro */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 4rem;
 }
 
-/* ========== TYPOGRAPHIE ========== */
-.heading-primary {
-  font-size: 6rem;
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-greeting {
+  font-size: 1.2rem;
+  color: #7843E9;
+  font-weight: 600;
+  margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
   font-weight: 800;
   color: #111;
+  margin-bottom: 1.5rem;
 }
 
-.text-primary {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-top: 2rem;
-  color: #333;
-}
-
-/* ========== HERO SECTION ========== */
-.home-hero {
-  height: 100vh;
-  min-height: 80rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.hero-title .highlight {
+  color: #7843E9;
   position: relative;
-  background: linear-gradient(to right, rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('../assets/svg/common-bg.svg');
-  background-size: cover;
-  background-position: center;
-  padding: 0 2rem;
+  display: inline-block;
 }
 
-.home-hero__content {
-  max-width: 90rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.home-hero__cta {
-  margin-top: 4rem;
-  text-align: center;
-}
-
-/* ========== BOUTONS ========== */
-.btn {
-  background-color: #7843E9;
-  color: white;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 1.5rem 5rem;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  background-color: #6a35d7;
-}
-
-/* ========== SCROLL MOUSE ICON ========== */
-.home-hero__mouse-scroll-cont {
-  position: absolute;
-  bottom: 3%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.mouse {
-  width: 25px;
-  height: 40px;
-  border: 2px solid #333;
-  border-radius: 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.mouse::before {
+.hero-title .highlight::after {
   content: '';
-  width: 5px;
-  height: 5px;
   position: absolute;
-  top: 7px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
+  width: 100%;
+  height: 10px;
+  bottom: 5px;
+  left: 0;
+  background: rgba(120, 67, 233, 0.2);
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Boutons spécifiques Héro */
+.btn-primary {
+  background-color: #7843E9;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(120, 67, 233, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(120, 67, 233, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #ddd;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  border-color: #7843E9;
+  color: #7843E9;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
   border-radius: 50%;
-  opacity: 1;
-  animation: wheel 1.3s infinite;
+  border: 5px solid #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
 }
 
-@keyframes wheel {
-  to {
-    opacity: 0;
-    top: 27px;
-  }
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #e0d4fc;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 1;
+  animation: morph 8s ease-in-out infinite;
 }
 
-/* ========== FOOTER ========== */
+@keyframes morph {
+  0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+/* Footer simple */
 footer {
   text-align: center;
   padding: 2rem;
   background-color: #f5f5f5;
   font-size: 1.4rem;
   color: #555;
+  margin-top: auto;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-  .heading-primary {
-    font-size: 4.5rem;
-  }
-
-  .text-primary {
-    font-size: 1.8rem;
-  }
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { flex-direction: column-reverse; text-align: center; padding-top: 2rem; }
+  .hero-actions { justify-content: center; }
+  .hero-image img { width: 250px; height: 250px; }
+  .blob { width: 280px; height: 280px; }
 }
 
-
-/* ========== MODE SOMBRE ========== */
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
-
-body.dark-mode .home-hero {
-  background: none;
-  background-color: #1e1e1e;
-}
-
-body.dark-mode .heading-primary,
-body.dark-mode .text-primary {
-  color: #f0f0f0;
-}
-
-body.dark-mode .btn {
-  background-color: #7843E9;
-  color: white;
-}
-
-body.dark-mode .btn:hover {
-  background-color: #5e2fd2;
-}
-
-body.dark-mode footer {
-  background-color: #1e1e1e;
-  color: #ccc;
-}
-
-body.dark-mode nav a {
-  color: #fff;
-}
-
-body.dark-mode nav a:hover {
-  color: #d1c4f7;
-}
-
-body.dark-mode .mouse {
-  border-color: #f0f0f0;
-}
-
-body.dark-mode .mouse::before {
-  background-color: #f0f0f0;
-}
+/* Dark Mode Home */
+body.dark-mode { background-color: #121212; color: #f0f0f0; }
+body.dark-mode .hero-title { color: #fff; }
+body.dark-mode .hero-subtitle { color: #bbb; }
+body.dark-mode .btn-secondary { color: #fff; border-color: #444; }
+body.dark-mode .blob { background: #2c2c2c; }
+body.dark-mode .hero-image img { border-color: #333; }
+body.dark-mode footer { background-color: #1e1e1e; color: #ccc; }
