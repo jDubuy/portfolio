@@ -1,33 +1,45 @@
-/* ========== HEADER NAVIGATION ========== */
+/* ========== 1. GLOBAL RESET ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ========== 2. HEADER ========== */
 header {
   background-color: #7843E9;
   padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 1000; /* Toujours au-dessus */
+  z-index: 1000;
+  height: 70px; /* Hauteur forcée */
 }
 
+/* ========== 3. NAVBAR ========== */
 .navbar {
   display: flex;
   align-items: center;
-  /* CORRECTION ICI : On force l'alignement à droite */
-  justify-content: flex-end; 
+  justify-content: flex-end; /* Bouton à droite */
+  
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  
+  /* DIMENSIONS EN PIXELS (Identique partout) */
+  padding: 0 20px;       
+  height: 70px;          
   position: relative;
-  height: 70px; /* Hauteur fixe pour éviter que la barre ne saute */
 }
 
-/* Bouton Mode Sombre */
+/* ========== BOUTON MODE SOMBRE ========== */
 .navbar .toggle-theme {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 5px;
   z-index: 10;
   display: flex; 
   align-items: center;
+  
+  /* AJOUTEZ CETTE LIGNE POUR CORRIGER LE BUG SUR PROJETS : */
+  margin: 0 !important; /* Force la marge à 0, même si projects.css dit le contraire */
 }
 
 .navbar .toggle-theme img {
@@ -41,22 +53,21 @@ header {
   transform: rotate(15deg) scale(1.1);
 }
 
-/* Menu de navigation (Centré Absolu) */
+/* ========== 5. MENU (Centré) ========== */
 .navbar ul {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 3rem;
+  gap: 30px; /* 30px fixe */
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Liens */
 .navbar a {
   color: white;
-  font-size: 1.6rem;
+  font-size: 16px; /* 16px fixe (ne change pas selon la page) */
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
@@ -85,15 +96,22 @@ header {
   width: 100%;
 }
 
-/* Responsive */
+/* ========== 6. RESPONSIVE ========== */
 @media (max-width: 900px) {
+  header, .navbar {
+    height: auto;
+  }
   .navbar {
-    justify-content: space-between; /* Sur mobile, on écarte le logo/menu */
+    justify-content: space-between;
+    padding: 10px 20px;
   }
   .navbar ul {
-    position: relative; /* On remet le menu dans le flux sur mobile */
+    position: relative;
     left: auto;
     transform: none;
-    gap: 1.5rem;
+    gap: 15px;
+  }
+  .navbar a {
+    font-size: 13px;
   }
 }
