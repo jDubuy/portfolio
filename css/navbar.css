@@ -10,25 +10,47 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;
-  height: 70px; /* Hauteur forcée */
+  height: 70px;
 }
 
 /* ========== 3. NAVBAR ========== */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Bouton à droite */
+  
+  /* C'EST ICI QUE ÇA SE JOUE : */
+  /* "space-between" envoie le 1er élément à gauche et le dernier à droite */
+  justify-content: space-between; 
   
   max-width: 1400px;
   margin: 0 auto;
-  
-  /* DIMENSIONS EN PIXELS (Identique partout) */
   padding: 0 20px;       
   height: 70px;          
   position: relative;
 }
 
-/* ========== BOUTON MODE SOMBRE ========== */
+/* ========== 4. BOUTON LANGUE (Gauche) ========== */
+.btn-lang {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.btn-lang:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+/* ========== 5. BOUTON MODE SOMBRE (Droite) ========== */
 .navbar .toggle-theme {
   background: none;
   border: none;
@@ -37,9 +59,7 @@ header {
   z-index: 10;
   display: flex; 
   align-items: center;
-  
-  /* AJOUTEZ CETTE LIGNE POUR CORRIGER LE BUG SUR PROJETS : */
-  margin: 0 !important; /* Force la marge à 0, même si projects.css dit le contraire */
+  margin: 0 !important;
 }
 
 .navbar .toggle-theme img {
@@ -53,21 +73,21 @@ header {
   transform: rotate(15deg) scale(1.1);
 }
 
-/* ========== 5. MENU (Centré) ========== */
+/* ========== 6. MENU (Reste Centré Absolu) ========== */
 .navbar ul {
-  position: absolute;
+  position: absolute; /* Sort du flux pour ne pas gêner l'écartement des boutons */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 30px; /* 30px fixe */
+  gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navbar a {
+.navbar a:not(.btn-lang) {
   color: white;
-  font-size: 16px; /* 16px fixe (ne change pas selon la page) */
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
@@ -76,12 +96,12 @@ header {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.navbar a:hover {
+.navbar a:not(.btn-lang):hover {
   color: #ffffff;
   transform: scale(1.05);
 }
 
-.navbar a::after {
+.navbar a:not(.btn-lang)::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -92,17 +112,15 @@ header {
   transition: width 0.3s ease;
 }
 
-.navbar a:hover::after {
+.navbar a:not(.btn-lang):hover::after {
   width: 100%;
 }
 
-/* ========== 6. RESPONSIVE ========== */
+/* ========== 7. RESPONSIVE ========== */
 @media (max-width: 900px) {
-  header, .navbar {
-    height: auto;
-  }
+  header, .navbar { height: auto; }
   .navbar {
-    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 10px 20px;
   }
   .navbar ul {
@@ -110,8 +128,10 @@ header {
     left: auto;
     transform: none;
     gap: 15px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    order: 3;
   }
-  .navbar a {
-    font-size: 13px;
-  }
+  /* Les boutons restent aux extrémités sur mobile aussi */
 }
