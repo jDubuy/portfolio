@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/about.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <script defer src="../js/darkmode.js"></script>
+  <script defer src="../js/site-dynamics.js"></script>
 </head>
 <body>
   <header>
@@ -16,9 +17,9 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="etude.html">Education</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="etude.html">Education</a></li>
       </ul>
       
       <button id="toggle-darkmode" class="btn toggle-theme">
@@ -28,9 +29,11 @@
   </header>
 
   <main>
-    <section class="about">
-      <h1 class="section-title">About Me</h1>
-      <p class="section-subtitle">Here is a bit more information about my background and skills</p>
+    <section class="about" aria-labelledby="about-title">
+      <header class="about-header">
+        <h1 id="about-title" class="section-title">About Me</h1>
+        <p class="section-subtitle">Here is a bit more information about my background and skills</p>
+      </header>
 
       <div class="about__content">
         <div class="about__text">
@@ -74,21 +77,23 @@
         </div>
       </div>
 
-      <p class="section-subtitle">Outside of Studies</p>
-      <div class="about_perso">
-        <p>Outside of my studies, I work as a lifeguard. I obtained my BNSSA in 2023, which allowed me to perform numerous replacements at the X Eau aquatic center in Cognac. I also worked two seasons at Siblu Bonne Anse Plage camping in La Palmyre during the summers of 2023 and 2024. These experiences allowed me to develop a real sense of responsibility, rigor, and good adaptability.</p>
-        <img src="../asset/jpg/sauveteur.jpg" alt="Lifeguard photo">
-      </div>
+      <section class="about-extra" aria-labelledby="about-extra-title">
+        <h2 id="about-extra-title" class="section-subtitle">Outside of Studies</h2>
+        <div class="about_perso">
+          <p>Outside of my studies, I work as a lifeguard. I obtained my BNSSA in 2023, which allowed me to perform numerous replacements at the X Eau aquatic center in Cognac. I also worked two seasons at Siblu Bonne Anse Plage camping in La Palmyre during the summers of 2023 and 2024. These experiences allowed me to develop a real sense of responsibility, rigor, and good adaptability.</p>
+          <img src="../asset/jpg/sauveteur.jpg" alt="Lifeguard photo">
+        </div>
 
-      <div class="about_perso">
-        <img src="../asset/png/sport.png" alt="Sport activity photo">
-        <p>I have been passionate about sports throughout my life. I have practiced basketball throughout my life, a sport that taught me teamwork and perseverance. I also enjoy swimming and running: any opportunity to exert myself or face a challenge is a source of motivation for me.</p>
-      </div>
+        <div class="about_perso">
+          <img src="../asset/png/sport.png" alt="Sport activity photo">
+          <p>I have been passionate about sports throughout my life. I have practiced basketball throughout my life, a sport that taught me teamwork and perseverance. I also enjoy swimming and running: any opportunity to exert myself or face a challenge is a source of motivation for me.</p>
+        </div>
 
-      <div class="about_perso">
-        <p>Music holds a central place in my life. Far beyond a passion, I have played drums my whole life. It has become a real tool in my daily routine. It helps me concentrate, stay focused, relax, or get motivated, depending on the moment. Whatever the style: jazz, rock, classical, rap, or even simple background music in an office; as long as it's there, it helps me find my rhythm. Without music, working becomes difficult for me. Conversely, any stray noise above the music can easily break my concentration. It's a fragile balance, but fundamental in my daily life.</p>
-        <img src="../asset/png/musique.png" alt="Drums or music photo">
-      </div>
+        <div class="about_perso">
+          <p>Music holds a central place in my life. Far beyond a passion, I have played drums my whole life. It has become a real tool in my daily routine. It helps me concentrate, stay focused, relax, or get motivated, depending on the moment. Whatever the style: jazz, rock, classical, rap, or even simple background music in an office; as long as it's there, it helps me find my rhythm. Without music, working becomes difficult for me. Conversely, any stray noise above the music can easily break my concentration. It's a fragile balance, but fundamental in my daily life.</p>
+          <img src="../asset/png/musique.png" alt="Drums or music photo">
+        </div>
+      </section>
     </section>
   </main>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +9,9 @@
   <link rel="stylesheet" href="css/projects.css" />
   <link rel="stylesheet" href="css/navbar.css" />
   <script defer src="js/darkmode.js"></script>
+  <script defer src="js/site-dynamics.js"></script>
 </head>
+
 <body>
   <header>
     <!-- Menu de navigation -->
@@ -18,11 +21,11 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">Qui suis-je ?</a></li>
+        <li><a href="etude.html">Mes études</a></li>
         <li><a href="projects.html">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="etude.html">Mes études</a></li>
       </ul>
-      
+
       <button id="toggle-darkmode" class="btn toggle-theme">
         <img id="theme-icon" src="asset/png/lune.png" alt="Icône mode" style="width: 24px;">
       </button>
@@ -30,22 +33,25 @@
   </header>
 
   <main>
-    <section class="projects-section">
-      <h1 class="section-title">Mes Projets</h1>
-      <p class="section-subtitle">Classés par thématique</p>
-      <div class="entreprise-column">
-        <h2 class="column-title">Expérience en entreprise</h2> 
-        <div class="entreprise-card">
-          <h3>Stage Refonte d'une base de données</h3>
-          <p>Stage au sein du groupe Ardo dans le service conditionnement.</p>
-          <a href="Projet/stageArdo.html" class="btn">Voir le projet</a>
+    <section class="projects-section" aria-labelledby="projects-title">
+      <header class="projects-head">
+        <h1 id="projects-title" class="section-title">Mes Projets</h1>
+        <p class="section-subtitle">Classés par thématique</p>
+      </header>
+      <div class="projects-column projects-column-full">
+        <h2 class="column-title">Expérience en entreprise</h2>
+        <div class="projects-grid six-cols">
+          <div class="project-card">
+            <h3>Stage Refonte d'une base de données</h3>
+            <p>Stage au sein du groupe Ardo dans le service conditionnement.</p>
+            <a href="Projet/stageArdo.html" class="btn">Voir le projet</a>
+          </div>
         </div>
       </div>
 
-      <div class="projects-columns">
-        <div class="projects-column">
-          <h2 class="column-title">Projets Informatiques</h2>
-          <div class="projects-grid">
+      <div class="projects-column projects-column-full">
+        <h2 class="column-title">Projets Informatiques</h2>
+        <div class="projects-grid six-cols">
             <div class="project-card">
               <h3>Projet Web MySQL/PHP/JS</h3>
               <p>Application pour ajouter des joueurs et simuler une saison avec statistiques comparées.</p>
@@ -88,12 +94,12 @@
               <p>Groupe de 4</p>
               <a href="Projet/Airbnb.html" class="btn">Voir le projet</a>
             </div>
-          </div>
         </div>
+      </div>
 
-        <div class="projects-column">
-          <h2 class="column-title">Projets Statistiques</h2>
-          <div class="projects-grid">
+      <div class="projects-column projects-column-full">
+        <h2 class="column-title">Projets Statistiques</h2>
+        <div class="projects-grid six-cols">
             <div class="project-card">
               <h3>Dataviz Accidents</h3>
               <p>Analyse des effets du COVID sur les accidents corporels à partir de données publiques.</p>
@@ -112,11 +118,10 @@
               <p>Individuel</p>
               <a href="Projet/SAEchrono.html" class="btn">Voir le projet</a>
             </div>
-          </div>
         </div>
       </div>
 
-      <div class="projects-column" style="margin-top: 6rem; width: 100%; text-align: center;">
+      <div class="projects-column projects-column-full">
         <h2 class="column-title">Autres Projets Universitaires</h2>
         <div class="projects-grid six-cols">
           <div class="project-card">
@@ -129,12 +134,12 @@
             <h3>Dossier Polémique</h3>
             <p>Étude sur la vidéosurveillance : acteurs, arguments, analyse. Groupe de 2.</p>
             <p>Binôme</p>
-            <a href="Projet/polemique.html" class="btn">Voir le projet</a>
+            <a href="Projet/polemyque.html" class="btn">Voir le projet</a>
           </div>
           <div class="project-card">
             <h3>Pecha Kucha Paul Watson</h3>
             <p>Présentation orale d’un militant écologiste au format Pecha Kucha.</p>
-            <a href="Projet/pecha-kucha.html" class="btn">Voir le projet</a>
+            <a href="Projet/petcha-kutcha.html" class="btn">Voir le projet</a>
           </div>
           <div class="project-card">
             <h3>SAÉ Besoins du territoire</h3>
@@ -157,4 +162,5 @@
     <p>&copy; 2025 Jules Dubuy</p>
   </footer>
 </body>
+
 </html>

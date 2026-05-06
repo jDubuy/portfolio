@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <script defer src="../js/darkmode.js"></script>
+  <script defer src="../js/site-dynamics.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,9 +20,9 @@
     <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="etude.html">Education</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="etude.html">Education</a></li>
     </ul>
     
     <button id="toggle-darkmode" class="btn toggle-theme">
@@ -31,10 +32,10 @@
   </header> 
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-content">
         <p class="hero-greeting">Hello, I am Jules Dubuy 👋</p>
-        <h1 class="hero-title">
+        <h1 id="hero-title" class="hero-title">
           Turning raw data into <span class="highlight">real impact</span>.
         </h1>
         <p class="hero-subtitle">

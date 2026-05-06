@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/projects.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
   <script defer src="../js/darkmode.js"></script>
+  <script defer src="../js/site-dynamics.js"></script>
 </head>
 <body>
   <header>
@@ -18,9 +19,9 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="etude.html">Education</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="etude.html">Education</a></li>
       </ul>
       
       <button id="toggle-darkmode" class="btn toggle-theme">
@@ -30,15 +31,19 @@
   </header>
 
   <main>
-    <section class="projects-section">
-      <h1 class="section-title">My Projects</h1>
-      <p class="section-subtitle">Organized by theme</p>
-      <div class="entreprise-column">
-        <h2 class="column-title">Industry Experience</h2> 
-        <div class="entreprise-card">
-          <h3>Internship: Database Redesign</h3>
-          <p>Internship within the Ardo group in the packaging department.</p>
-          <a href="Projet/stageArdo.html" class="btn">View project</a>
+    <section class="projects-section" aria-labelledby="projects-title">
+      <header class="projects-head">
+        <h1 id="projects-title" class="section-title">My Projects</h1>
+        <p class="section-subtitle">Organized by theme</p>
+      </header>
+      <div class="projects-column projects-column-full">
+        <h2 class="column-title">Industry Experience</h2>
+        <div class="projects-grid six-cols">
+          <div class="project-card">
+            <h3>Internship: Database Redesign</h3>
+            <p>Internship within the Ardo group in the packaging department.</p>
+            <a href="Projet/stageArdo.html" class="btn">View project</a>
+          </div>
         </div>
       </div>
 
@@ -116,7 +121,7 @@
         </div>
       </div>
 
-      <div class="projects-column" style="margin-top: 6rem; width: 100%; text-align: center;">
+      <div class="projects-column projects-column-full">
         <h2 class="column-title">Other University Projects</h2>
         <div class="projects-grid six-cols">
           <div class="project-card">
@@ -129,12 +134,12 @@
             <h3>Controversial Topic File</h3>
             <p>Study on video surveillance: stakeholders, arguments, analysis.</p>
             <p>Duo</p>
-            <a href="Projet/polemique.html" class="btn">View project</a>
+            <a href="Projet/polemyque.html" class="btn">View project</a>
           </div>
           <div class="project-card">
             <h3>Pecha Kucha Paul Watson</h3>
             <p>Oral presentation of an environmental activist in Pecha Kucha format.</p>
-            <a href="Projet/pecha-kucha.html" class="btn">View project</a>
+            <a href="Projet/petcha-kutcha.html" class="btn">View project</a>
           </div>
           <div class="project-card">
             <h3>Territory Needs SAE</h3>

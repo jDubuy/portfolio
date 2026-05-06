@@ -1,137 +1,175 @@
-/* ========== 1. GLOBAL RESET ========== */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* ========== 2. HEADER ========== */
 header {
-  background-color: #7843E9;
-  padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  height: 70px;
+  padding: 0.95rem 1.2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 247, 255, 0.9) 0%,
+    rgba(244, 247, 255, 0.4) 100%
+  );
+  backdrop-filter: blur(8px);
 }
 
-/* ========== 3. NAVBAR ========== */
 .navbar {
-  display: flex;
-  align-items: center;
-  
-  /* C'EST ICI QUE ÇA SE JOUE : */
-  /* "space-between" envoie le 1er élément à gauche et le dernier à droite */
-  justify-content: space-between; 
-  
-  max-width: 1400px;
+  width: min(1200px, 100%);
   margin: 0 auto;
-  padding: 0 20px;       
-  height: 70px;          
-  position: relative;
+  min-height: 70px;
+  border-radius: 18px;
+  padding: 0.85rem 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(111, 75, 255, 0.92);
+  box-shadow: 0 14px 32px rgba(51, 26, 131, 0.25);
 }
 
-/* ========== 4. BOUTON LANGUE (Gauche) ========== */
 .btn-lang {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
+  justify-self: start;
   text-decoration: none;
+  font-size: 0.82rem;
   font-weight: 700;
-  font-size: 14px;
-  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-  z-index: 10;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  padding: 0.46rem 0.82rem;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-lang:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: white;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
 }
 
-/* ========== 5. BOUTON MODE SOMBRE (Droite) ========== */
-.navbar .toggle-theme {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  z-index: 10;
-  display: flex; 
-  align-items: center;
-  margin: 0 !important;
-}
-
-.navbar .toggle-theme img {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
-}
-
-.navbar .toggle-theme:hover img {
-  transform: rotate(15deg) scale(1.1);
-}
-
-/* ========== 6. MENU (Reste Centré Absolu) ========== */
 .navbar ul {
-  position: absolute; /* Sort du flux pour ne pas gêner l'écartement des boutons */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+}
+
+.navbar li {
+  display: inline-flex;
 }
 
 .navbar a:not(.btn-lang) {
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
   text-decoration: none;
-  position: relative;
-  transition: all 0.3s ease;
-  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.38rem 0.15rem;
+  border-radius: 10px;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .navbar a:not(.btn-lang):hover {
-  color: #ffffff;
-  transform: scale(1.05);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-.navbar a:not(.btn-lang)::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background-color: #ffffff;
-  transition: width 0.3s ease;
+.navbar a.active:not(.btn-lang) {
+  color: #fff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.36);
 }
 
-.navbar a:not(.btn-lang):hover::after {
-  width: 100%;
+.navbar .toggle-theme {
+  justify-self: end;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
-/* ========== 7. RESPONSIVE ========== */
-@media (max-width: 900px) {
-  header, .navbar { height: auto; }
+.navbar .toggle-theme:hover {
+  transform: translateY(-2px) rotate(6deg);
+  border-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar .toggle-theme img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 1024px) {
   .navbar {
-    flex-wrap: wrap;
-    padding: 10px 20px;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "lang theme"
+      "menu menu";
+    gap: 0.9rem;
   }
+
+  .btn-lang {
+    grid-area: lang;
+  }
+
+  .navbar .toggle-theme {
+    grid-area: theme;
+  }
+
   .navbar ul {
-    position: relative;
-    left: auto;
-    transform: none;
-    gap: 15px;
-    width: 100%;
-    justify-content: center;
-    margin-top: 15px;
-    order: 3;
+    grid-area: menu;
+    justify-content: flex-start;
+    gap: 0.65rem 1rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
-  /* Les boutons restent aux extrémités sur mobile aussi */
+
+  .navbar a:not(.btn-lang) {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 620px) {
+  header {
+    padding: 0.8rem 0.6rem;
+  }
+
+  .navbar {
+    border-radius: 14px;
+    padding: 0.75rem;
+  }
+
+  .navbar ul {
+    justify-content: center;
+  }
+}
+
+body.dark-mode header {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 18, 32, 0.85) 0%,
+    rgba(14, 18, 32, 0.45) 100%
+  );
+}
+
+body.dark-mode .navbar {
+  background: rgba(31, 38, 72, 0.88);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
