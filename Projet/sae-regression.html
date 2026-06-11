@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Mes projets | Jules Dubuy</title>
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="../css/projectsheet.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <script defer src="../js/darkmode.js"></script>
+</head>
+<body>
+  <header>
+    <!-- Menu de navigation -->
+    <nav class="navbar">
+      <a href="../en/Projet/sae-regression.html" class="btn-lang">EN</a>
+
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../about.html">Qui suis-je ?</a></li>
+        <li><a href="../projects.html">Projets</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../etude.html">Mes études</a></li>
+      </ul>
+      
+      <button id="toggle-darkmode" class="btn toggle-theme">
+        <img id="theme-icon" src="../asset/png/lune.png" alt="Icône mode sombre" style="width: 24px;">
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Projet : SAÉ - Régression sur des données réelles</h1>
+      <p>Ce projet d'analyse des ventes immobilières à Paris au premier semestre 2023 avait pour objectif de construire un modèle prédictif des prix de vente de logements (appartements et maisons) à partir de données réelles d'entraînement (« train.csv ») pour prédire des valeurs foncières inconnues (« test.csv »).</p>
+    </section>
+
+    <section>
+      <h2>Objectifs du projet</h2>
+      <p>L'objectif était d'analyser la structure des données immobilières parisiennes afin de concevoir un modèle de prévision robuste. Nous devions identifier les variables les plus significatives (comme la surface réelle) et ajuster différents types de modèles (linéaires, exponentiels, logarithmiques, puissance) pour prédire au mieux la valeur foncière des logements.</p>
+    </section>
+
+    <section>
+      <h2>Démarche de recherche &amp; Nettoyage des données</h2>
+      <p>Le projet s'est déroulé en plusieurs phases clés :</p>
+      <ul>
+        <li><strong>Exploration initiale :</strong> Manipulation et exploration des données sous Excel pour comprendre leur structure et repérer d'éventuelles valeurs aberrantes ou manquantes.</li>
+        <li><strong>Filtrage et nettoyage rigoureux :</strong> Pour éviter de fausser les analyses, nous avons déterminé des contraintes de filtrage :
+          <ul>
+            <li>Exclusion des 10 % des valeurs foncières les plus basses et les plus hautes.</li>
+            <li>Suppression des surfaces inférieures à 9 m² (le minimum légal).</li>
+            <li>Élimination des logements dont le prix au mètre carré dépassait 40 000 euros.</li>
+          </ul>
+        </li>
+        <li><strong>Analyse de corrélation :</strong> Évaluation de couples de variables en calculant le coefficient de corrélation pour identifier les liens significatifs (notamment surface, nombre de pièces et commune).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Modélisation &amp; Prédictions</h2>
+      <p>Pour s'adapter aux disparités des prix parisiens, nous avons opté pour un modèle linéaire par arrondissement :</p>
+      <ul>
+        <li>Calcul des coefficients de régression $a$ et $b$ par la méthode des moindres carrés pour chaque arrondissement séparément.</li>
+        <li>Mesure de la performance globale via le coefficient de corrélation linéaire $r$ entre valeurs prédites et observées.</li>
+        <li>Application de la formule finale pour estimer les prix du fichier test : <code>Valeur foncière prédite = a * Surface réelle + b</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>Ce projet m'a permis de consolider mes compétences en modélisation statistique et en régression linéaire sur des données réelles complexes. Bien que nous ayons choisi un modèle relativement simple, le nettoyage des données et l'approche par arrondissement ont fourni des prédictions cohérentes et un coefficient de corrélation final satisfaisant.</p>
+    </section>
+  </main>
+</body>
+</html>

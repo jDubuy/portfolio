@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>My Projects | Jules Dubuy</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../css/projectsheet.css" />
+  <link rel="stylesheet" href="../../css/navbar.css" />
+  <script defer src="../../js/darkmode.js"></script>
+</head>
+<body>
+  <header>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+      <a href="../../Projet/sae-regression.html" class="btn-lang">FR</a>
+
+      <ul>
+        <li><a href="../../en/index.html">Home</a></li>
+        <li><a href="../../en/about.html">About</a></li>
+        <li><a href="../../en/etude.html">Education</a></li>
+        <li><a href="../../en/projects.html">Projects</a></li>
+        <li><a href="../../en/contact.html">Contact</a></li>
+      </ul>
+      
+      <button id="toggle-darkmode" class="btn toggle-theme">
+        <img id="theme-icon" src="../../asset/png/lune.png" alt="Mode icon" style="width: 24px;">
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Project: SAE - Regression on Real-World Data</h1>
+      <p>This project of real estate sales analysis in Paris during the first half of 2023 aimed to build a predictive model of housing prices (apartments and houses) using real training data ('train.csv') to predict unknown land values ('test.csv').</p>
+    </section>
+
+    <section>
+      <h2>Project Objectives</h2>
+      <p>The objective was to analyze the structure of Parisian real estate data to design a robust forecasting model. We had to identify the most significant variables (such as actual surface area) and adjust different model types (linear, exponential, logarithmic, power) to best predict the land value of housing.</p>
+    </section>
+
+    <section>
+      <h2>Research Approach &amp; Data Cleaning</h2>
+      <p>The project took place in several key phases:</p>
+      <ul>
+        <li><strong>Initial exploration:</strong> Manipulation and exploration of data in Excel to understand their structure and identify potential outliers or missing values.</li>
+        <li><strong>Rigorous filtering and cleaning:</strong> To avoid distorting the analyses, we established filtering constraints:
+          <ul>
+            <li>Exclusion of the bottom 10% and top 10% of land values.</li>
+            <li>Removal of surface areas under 9 m² (the legal minimum).</li>
+            <li>Elimination of housing whose price per square meter exceeded 40,000 euros.</li>
+          </ul>
+        </li>
+        <li><strong>Correlation analysis:</strong> Evaluation of pairs of variables by calculating the correlation coefficient to identify significant links (specifically surface area, number of rooms, and district/municipality).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Modeling &amp; Predictions</h2>
+      <p>To adapt to disparities in Parisian prices, we opted for a linear model per district (arrondissement):</p>
+      <ul>
+        <li>Calculation of regression coefficients 'a' and 'b' by the least squares method for each district separately.</li>
+        <li>Measurement of overall performance via the linear correlation coefficient 'r' between predicted and observed values.</li>
+        <li>Application of the final formula to estimate prices of the test file: <code>Predicted Land Value = a * Real Surface Area + b</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>This project allowed me to consolidate my skills in statistical modeling and linear regression on complex real-world data. Although we chose a relatively simple model, the data cleaning and district-by-district approach provided consistent predictions and a satisfactory final correlation coefficient.</p>
+    </section>
+  </main>
+</body>
+</html>
