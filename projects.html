@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Mes projets | Jules Dubuy</title>
+  <meta name="description" content="Portfolio de Jules Dubuy – découvrez mes projets en Data Engineering, Business Intelligence, développement web et statistiques." />
   <link rel="stylesheet" href="css/projects.css" />
   <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script defer src="js/darkmode.js"></script>
   <script defer src="js/site-dynamics.js"></script>
 </head>
@@ -17,7 +21,6 @@
     <!-- Menu de navigation -->
     <nav class="navbar">
       <a href="en/projects.html" class="btn-lang">EN</a>
-
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="about.html">Qui suis-je ?</a></li>
@@ -25,7 +28,6 @@
         <li><a href="projects.html">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
       <button id="toggle-darkmode" class="btn toggle-theme">
         <img id="theme-icon" src="asset/png/lune.png" alt="Icône mode" style="width: 24px;">
       </button>
@@ -33,136 +35,311 @@
   </header>
 
   <main>
-    <section class="projects-section" aria-labelledby="projects-title">
-      <header class="projects-head">
-        <h1 id="projects-title" class="section-title">Mes Projets</h1>
-        <p class="section-subtitle">Classés par thématique</p>
-      </header>
-      <div class="projects-column projects-column-full">
-        <h2 class="column-title">Expérience en entreprise</h2>
-        <div class="projects-grid six-cols">
-          <div class="project-card">
-            <h3>Stage Refonte d'une base de données</h3>
-            <p>Stage au sein du groupe Ardo dans le service conditionnement.</p>
-            <a href="Projet/stageArdo.html" class="btn">Voir le projet</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="projects-column projects-column-full">
-        <h2 class="column-title">Projets Informatiques</h2>
-        <div class="projects-grid six-cols">
-          <div class="project-card">
-            <h3>Jumeau Numérique IA (RAG)</h3>
-            <p>Développement d'un LLM personnalisé agissant comme un jumeau numérique avec mise en place d'un système
-              RAG.</p>
-            <p>Individuel</p>
-            <a href="Projet/llm.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Application Web (MySQL/PHP/JS)</h3>
-            <p>Application web pour ajouter des joueurs et simuler une saison avec statistiques comparées.</p>
-            <p>Groupe de 3</p>
-            <a href="Projet/web-php-js.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Intégration Datawarehouse</h3>
-            <p><strong>Traitement</strong> de fichiers, base Oracle (via Docker), et dataviz sur Power BI.</p>
-            <p>Groupe de 4</p>
-            <a href="Projet/integration-datawh.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Collecte de données</h3>
-            <p><strong>Scraping</strong> et carte dynamique des consommations d’énergie (API).</p>
-            <p>Groupe de 4</p>
-            <a href="Projet/webscrapping.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Modélisation SID</h3>
-            <p>Création d'un SID en étoile pour un cabinet fictif de dentistes.</p>
-            <p>Binôme</p>
-            <a href="Projet/Mod-SID.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Note Tracker</h3>
-            <p>Outil Excel pour gérer les notes d’un étudiant (ajout, suppression, bilan annuel).</p>
-            <p>Individuel</p>
-            <a href="Projet/NoteTracker.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Outil Python Pompiers</h3>
-            <p>Outil Python dynamique avec jointures pour analyser les affectations de casernes.</p>
-            <p>Binôme</p>
-            <a href="Projet/Integration-bddr.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Site Web JavaScript Airbnb</h3>
-            <p>Site web avec intégration de graphiques Plotly.</p>
-            <p>Groupe de 4</p>
-            <a href="Projet/Airbnb.html" class="btn">Voir le projet</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="projects-column projects-column-full">
-        <h2 class="column-title">Projets Statistiques</h2>
-        <div class="projects-grid six-cols">
-          <div class="project-card">
-            <h3>Dataviz Accidents</h3>
-            <p>Analyse des effets du COVID sur les accidents corporels à partir de données publiques.</p>
-            <p>Individuel</p>
-            <a href="Projet/Dataviz.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Dataviz Observatoire Mavie</h3>
-            <p>Interface de tri et visualisation de données d’enquête.</p>
-            <p>Groupe de 5</p>
-            <a href="Projet/SAEMavie.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Série chronologique</h3>
-            <p>Étude et prévision d’importations sur un territoire donné.</p>
-            <p>Individuel</p>
-            <a href="Projet/SAEchrono.html" class="btn">Voir le projet</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="projects-column projects-column-full">
-        <h2 class="column-title">Autres Projets Universitaires</h2>
-        <div class="projects-grid six-cols">
-          <div class="project-card">
-            <h3>SIG Cartographie QGIS</h3>
-            <p>Élaboration de cartes pour optimiser l’implantation d’un McDonald’s.</p>
-            <p>Binôme</p>
-            <a href="Projet/Projet-carto.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Dossier Polémique</h3>
-            <p>Étude sur la vidéosurveillance : acteurs, arguments, analyse. Groupe de 2.</p>
-            <p>Binôme</p>
-            <a href="Projet/polemyque.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>Pecha Kucha Paul Watson</h3>
-            <p>Présentation orale d’un militant écologiste au format Pecha Kucha.</p>
-            <a href="Projet/petcha-kutcha.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>SAÉ Besoins du territoire</h3>
-            <p>Animation de cours web pour lycéens (HTML/CSS/JS/PHP).</p>
-            <p>Groupe de 4</p>
-            <a href="Projet/besoin-du-territoire.html" class="btn">Voir le projet</a>
-          </div>
-          <div class="project-card">
-            <h3>SAÉ Conformité RGPD</h3>
-            <p>Audit d’une entreprise et accompagnement sur les bonnes pratiques RGPD.</p>
-            <p>Groupe de 4</p>
-            <a href="Projet/RGPD.html" class="btn">Voir le projet</a>
-          </div>
+    <!-- ═══ HERO ═══════════════════════════════════════════ -->
+    <section class="page-hero" aria-labelledby="projects-title">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Portfolio</div>
+        <h1 id="projects-title" class="hero-title">Mes <span class="hero-highlight">Projets</span></h1>
+        <p class="hero-sub">Data Engineering · Business Intelligence · Développement Web · Statistiques</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Projets</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Domaines</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">2</span><span class="stat-label">Expériences pro</span></div>
         </div>
       </div>
     </section>
+
+    <!-- ═══ EXPÉRIENCE EN ENTREPRISE ════════════════════════ -->
+    <section class="projects-section" aria-label="Expérience en entreprise">
+      <div class="section-header">
+        <div class="section-header-line"></div>
+        <h2 class="column-title">
+          <span class="section-icon">🏢</span>
+          Expérience en entreprise
+        </h2>
+        <div class="section-header-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <!-- ★ CARTE VEDETTE — Alternance CdALR ★ -->
+        <div class="project-card card-featured" id="card-alternance">
+          <div class="card-featured-bg"></div>
+          <div class="card-badge card-badge-new">Alternance 2025–2026</div>
+          <div class="card-tech-row">
+            <span class="chip chip-purple">PostgreSQL</span>
+            <span class="chip chip-blue">Pentaho PDI</span>
+            <span class="chip chip-green">SAP BO</span>
+            <span class="chip chip-orange">Jenkins</span>
+          </div>
+          <h3>Automatisation des indicateurs de fréquentation</h3>
+          <p>
+            Mission principale à la <strong>Communauté d'Agglomération de La Rochelle</strong> :
+            conception et déploiement d'un pipeline ETL complet (DSA → ODS → DWH) pour automatiser
+            le suivi de fréquentation des musées. Remplacement d'un processus manuel par une
+            architecture robuste sous PostgreSQL et SAP BusinessObjects.
+          </p>
+          <div class="card-kpis">
+            <div class="kpi"><span class="kpi-val">3</span><span class="kpi-lab">Musées</span></div>
+            <div class="kpi"><span class="kpi-val">0</span><span class="kpi-lab">Saisie manuelle</span></div>
+            <div class="kpi"><span class="kpi-val">300+</span><span class="kpi-lab">Tables traitées</span></div>
+          </div>
+          <a href="Projet/alternance-CdALR.html" class="btn btn-featured" id="btn-alternance">Voir le projet →</a>
+        </div>
+
+        <div class="project-card" id="card-ardo">
+          <div class="card-icon-top">🏭</div>
+          <h3>Stage — Refonte d'une base de données</h3>
+          <p>Stage au sein du groupe Ardo dans le service conditionnement.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-gray">Python</span>
+            <span class="chip chip-sm chip-gray">Excel / VBA</span>
+          </div>
+          <a href="Projet/stageArdo.html" class="btn" id="btn-ardo">Voir le projet</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ PROJETS INFORMATIQUES ════════════════════════════ -->
+    <section class="projects-section" aria-label="Projets Informatiques">
+      <div class="section-header">
+        <div class="section-header-line"></div>
+        <h2 class="column-title">
+          <span class="section-icon">💻</span>
+          Projets Informatiques
+        </h2>
+        <div class="section-header-line"></div>
+      </div>
+      <div class="projects-grid projects-grid-multi">
+
+        <div class="project-card" id="card-llm">
+          <div class="card-icon-top">🤖</div>
+          <h3>Jumeau Numérique IA (RAG)</h3>
+          <p>Développement d'un LLM personnalisé agissant comme un jumeau numérique avec mise en place d'un système RAG.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-purple">IA / LLM</span>
+            <span class="chip chip-sm chip-gray">Python</span>
+          </div>
+          <p class="card-team">Individuel</p>
+          <a href="Projet/llm.html" class="btn" id="btn-llm">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-php">
+          <div class="card-icon-top">🌐</div>
+          <h3>Application Web (MySQL/PHP/JS)</h3>
+          <p>Application web pour ajouter des joueurs et simuler une saison avec statistiques comparées.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-blue">PHP</span>
+            <span class="chip chip-sm chip-gray">MySQL</span>
+            <span class="chip chip-sm chip-gray">JS</span>
+          </div>
+          <p class="card-team">Groupe de 3</p>
+          <a href="Projet/web-php-js.html" class="btn" id="btn-php">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-dw">
+          <div class="card-icon-top">🗄️</div>
+          <h3>Intégration Datawarehouse</h3>
+          <p><strong>Traitement</strong> de fichiers, base Oracle (via Docker), et dataviz sur Power BI.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-orange">Oracle</span>
+            <span class="chip chip-sm chip-gray">Power BI</span>
+          </div>
+          <p class="card-team">Groupe de 4</p>
+          <a href="Projet/integration-datawh.html" class="btn" id="btn-dw">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-scrap">
+          <div class="card-icon-top">🕷️</div>
+          <h3>Collecte de données</h3>
+          <p><strong>Scraping</strong> et carte dynamique des consommations d'énergie (API).</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-green">API</span>
+            <span class="chip chip-sm chip-gray">Scraping</span>
+          </div>
+          <p class="card-team">Groupe de 4</p>
+          <a href="Projet/webscrapping.html" class="btn" id="btn-scrap">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-sid">
+          <div class="card-icon-top">⭐</div>
+          <h3>Modélisation SID</h3>
+          <p>Création d'un SID en étoile pour un cabinet fictif de dentistes.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-purple">DWH</span>
+            <span class="chip chip-sm chip-gray">SQL</span>
+          </div>
+          <p class="card-team">Binôme</p>
+          <a href="Projet/Mod-SID.html" class="btn" id="btn-sid">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-note">
+          <div class="card-icon-top">📊</div>
+          <h3>Note Tracker</h3>
+          <p>Outil Excel pour gérer les notes d'un étudiant (ajout, suppression, bilan annuel).</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-green">Excel</span>
+            <span class="chip chip-sm chip-gray">VBA</span>
+          </div>
+          <p class="card-team">Individuel</p>
+          <a href="Projet/NoteTracker.html" class="btn" id="btn-note">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-pompier">
+          <div class="card-icon-top">🚒</div>
+          <h3>Outil Python Pompiers</h3>
+          <p>Outil Python dynamique avec jointures pour analyser les affectations de casernes.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-blue">Python</span>
+            <span class="chip chip-sm chip-gray">Pandas</span>
+          </div>
+          <p class="card-team">Binôme</p>
+          <a href="Projet/Integration-bddr.html" class="btn" id="btn-pompier">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-airbnb">
+          <div class="card-icon-top">🏠</div>
+          <h3>Site Web JavaScript Airbnb</h3>
+          <p>Site web avec intégration de graphiques Plotly.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-orange">JavaScript</span>
+            <span class="chip chip-sm chip-gray">Plotly</span>
+          </div>
+          <p class="card-team">Groupe de 4</p>
+          <a href="Projet/Airbnb.html" class="btn" id="btn-airbnb">Voir le projet</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ PROJETS STATISTIQUES ════════════════════════════ -->
+    <section class="projects-section" aria-label="Projets Statistiques">
+      <div class="section-header">
+        <div class="section-header-line"></div>
+        <h2 class="column-title">
+          <span class="section-icon">📈</span>
+          Projets Statistiques
+        </h2>
+        <div class="section-header-line"></div>
+      </div>
+      <div class="projects-grid projects-grid-multi">
+
+        <div class="project-card" id="card-dataviz">
+          <div class="card-icon-top">🚗</div>
+          <h3>Dataviz Accidents</h3>
+          <p>Analyse des effets du COVID sur les accidents corporels à partir de données publiques.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-blue">R</span>
+            <span class="chip chip-sm chip-gray">Dataviz</span>
+          </div>
+          <p class="card-team">Individuel</p>
+          <a href="Projet/Dataviz.html" class="btn" id="btn-dataviz">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-mavie">
+          <div class="card-icon-top">📋</div>
+          <h3>Dataviz Observatoire Mavie</h3>
+          <p>Interface de tri et visualisation de données d'enquête.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-green">Dataviz</span>
+            <span class="chip chip-sm chip-gray">Enquête</span>
+          </div>
+          <p class="card-team">Groupe de 5</p>
+          <a href="Projet/SAEMavie.html" class="btn" id="btn-mavie">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-chrono">
+          <div class="card-icon-top">⏱️</div>
+          <h3>Série chronologique</h3>
+          <p>Étude et prévision d'importations sur un territoire donné.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-purple">Prévision</span>
+            <span class="chip chip-sm chip-gray">R</span>
+          </div>
+          <p class="card-team">Individuel</p>
+          <a href="Projet/SAEchrono.html" class="btn" id="btn-chrono">Voir le projet</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ AUTRES PROJETS UNIVERSITAIRES ═══════════════════ -->
+    <section class="projects-section" aria-label="Autres Projets Universitaires">
+      <div class="section-header">
+        <div class="section-header-line"></div>
+        <h2 class="column-title">
+          <span class="section-icon">🎓</span>
+          Autres Projets Universitaires
+        </h2>
+        <div class="section-header-line"></div>
+      </div>
+      <div class="projects-grid projects-grid-multi">
+
+        <div class="project-card" id="card-carto">
+          <div class="card-icon-top">🗺️</div>
+          <h3>SIG Cartographie QGIS</h3>
+          <p>Élaboration de cartes pour optimiser l'implantation d'un McDonald's.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-green">QGIS</span>
+            <span class="chip chip-sm chip-gray">SIG</span>
+          </div>
+          <p class="card-team">Binôme</p>
+          <a href="Projet/Projet-carto.html" class="btn" id="btn-carto">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-polo">
+          <div class="card-icon-top">🔍</div>
+          <h3>Dossier Polémique</h3>
+          <p>Étude sur la vidéosurveillance : acteurs, arguments, analyse.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-orange">Analyse</span>
+          </div>
+          <p class="card-team">Binôme</p>
+          <a href="Projet/polemyque.html" class="btn" id="btn-polo">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-pecha">
+          <div class="card-icon-top">🎤</div>
+          <h3>Pecha Kucha Paul Watson</h3>
+          <p>Présentation orale d'un militant écologiste au format Pecha Kucha.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-blue">Oral</span>
+          </div>
+          <a href="Projet/petcha-kutcha.html" class="btn" id="btn-pecha">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-besoin">
+          <div class="card-icon-top">🏫</div>
+          <h3>SAÉ Besoins du territoire</h3>
+          <p>Animation de cours web pour lycéens (HTML/CSS/JS/PHP).</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-purple">HTML/CSS</span>
+            <span class="chip chip-sm chip-gray">PHP</span>
+          </div>
+          <p class="card-team">Groupe de 4</p>
+          <a href="Projet/besoin-du-territoire.html" class="btn" id="btn-besoin">Voir le projet</a>
+        </div>
+
+        <div class="project-card" id="card-rgpd">
+          <div class="card-icon-top">🔒</div>
+          <h3>SAÉ Conformité RGPD</h3>
+          <p>Audit d'une entreprise et accompagnement sur les bonnes pratiques RGPD.</p>
+          <div class="card-tags">
+            <span class="chip chip-sm chip-orange">RGPD</span>
+            <span class="chip chip-sm chip-gray">Audit</span>
+          </div>
+          <p class="card-team">Groupe de 4</p>
+          <a href="Projet/RGPD.html" class="btn" id="btn-rgpd">Voir le projet</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>

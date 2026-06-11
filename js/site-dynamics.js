@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* ── Reveal animation on scroll ────────────────── */
   const revealTargets = document.querySelectorAll(
     "main section, .project-card, .entreprise-card, .about_perso, .timeline-mode section, .contact__block, .qa-card"
   );
@@ -14,11 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.08 }
   );
 
   revealTargets.forEach((el) => observer.observe(el));
 
+  /* ── Blob parallax ──────────────────────────────── */
   const blob = document.querySelector(".blob");
   if (blob) {
     document.addEventListener("mousemove", (event) => {
@@ -28,11 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const projectsSection = document.querySelector(".projects-section");
-  if (!projectsSection) return;
+  /* ── Search & Filter ────────────────────────────── */
+  // Collect ALL project sections (new multi-section layout)
+  const allProjectSections = Array.from(document.querySelectorAll("section.projects-section"));
+  if (!allProjectSections.length) return;
 
+  // Collect all cards from all sections
   const cards = Array.from(
-    projectsSection.querySelectorAll(".project-card, .entreprise-card")
+    document.querySelectorAll(".projects-section .project-card, .projects-section .entreprise-card")
   );
   if (!cards.length) return;
 
@@ -57,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         results: (n) => `${n} projet(s) affiché(s)`,
       };
 
+  // Build controls bar and inject it before the first section
+  const firstSection = allProjectSections[0];
   const controls = document.createElement("div");
   controls.className = "projects-controls";
   controls.innerHTML = `
@@ -70,37 +77,28 @@ document.addEventListener("DOMContentLoaded", () => {
     </select>
     <p class="projects-results" aria-live="polite"></p>
   `;
-
-  const projectsHead = projectsSection.querySelector(".projects-head");
-  if (projectsHead && projectsHead.nextSibling) {
-    projectsSection.insertBefore(controls, projectsHead.nextSibling);
-  } else {
-    projectsSection.insertBefore(controls, projectsSection.querySelector(".entreprise-column"));
-  }
+  firstSection.parentNode.insertBefore(controls, firstSection);
 
   const searchInput = controls.querySelector(".projects-search");
   const filterSelect = controls.querySelector(".projects-filter");
   const results = controls.querySelector(".projects-results");
 
+  // Tag each card with type & search text
   cards.forEach((card) => {
     const title = card.querySelector("h3")?.textContent?.toLowerCase() || "";
-    const parentBlock = card.closest(".projects-column");
-    const blockTitle = parentBlock?.querySelector(".column-title")?.textContent?.toLowerCase() || "";
+    // Determine type from the parent section's aria-label
+    const parentSection = card.closest("section[aria-label]");
+    const sectionLabel = parentSection?.getAttribute("aria-label")?.toLowerCase() || "";
     const cardText = card.textContent?.toLowerCase() || "";
+
     let type = "autre";
+    if (sectionLabel.includes("entreprise") || sectionLabel.includes("industry")) type = "entreprise";
+    else if (sectionLabel.includes("informati") || sectionLabel.includes("it project")) type = "informatique";
+    else if (sectionLabel.includes("statisti")) type = "statistique";
 
-    if (blockTitle.includes("entreprise") || blockTitle.includes("industry")) type = "entreprise";
-    else if (blockTitle.includes("informati") || blockTitle.includes("it project")) type = "informatique";
-    else if (blockTitle.includes("statisti")) type = "statistique";
-
-    card.dataset.search = `${title} ${blockTitle} ${cardText}`;
+    card.dataset.search = `${title} ${sectionLabel} ${cardText}`;
     card.dataset.type = type;
   });
-
-  // Tous les blocs parents qui contiennent des cartes
-  const sectionBlocks = Array.from(
-    projectsSection.querySelectorAll(".projects-column, .projects-column-full")
-  );
 
   const applyFilters = () => {
     const query = searchInput.value.trim().toLowerCase();
@@ -108,30 +106,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let visibleCount = 0;
 
     cards.forEach((card) => {
-      const matchesQuery = card.dataset.search.includes(query);
-      const matchesType =
-        selectedType === "all" || card.dataset.type === selectedType;
-
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const matchesType = selectedType === "all" || card.dataset.type === selectedType;
       const show = matchesQuery && matchesType;
       card.style.display = show ? "" : "none";
       if (show) visibleCount += 1;
     });
 
-    // Masquer les blocs de section dont toutes les cartes sont cachées
-    sectionBlocks.forEach((block) => {
-      const blockCards = block.querySelectorAll(".project-card, .entreprise-card");
-      const hasVisible = Array.from(blockCards).some((c) => c.style.display !== "none");
-      block.style.display = hasVisible ? "" : "none";
+    // Hide entire section if all its cards are hidden
+    allProjectSections.forEach((section) => {
+      const sectionCards = section.querySelectorAll(".project-card, .entreprise-card");
+      const hasVisible = Array.from(sectionCards).some((c) => c.style.display !== "none");
+      section.style.display = hasVisible ? "" : "none";
     });
-
-    // Masquer aussi le wrapper .projects-columns s'il est vide
-    const columnsWrapper = projectsSection.querySelector(".projects-columns");
-    if (columnsWrapper) {
-      const hasVisibleColumn = Array.from(
-        columnsWrapper.querySelectorAll(".projects-column")
-      ).some((col) => col.style.display !== "none");
-      columnsWrapper.style.display = hasVisibleColumn ? "" : "none";
-    }
 
     results.textContent = i18n.results(visibleCount);
   };

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Alternance CdALR – Automatisation des indicateurs de fréquentation | Jules Dubuy</title>
+  <meta name="description" content="Projet d'alternance à la Communauté d'Agglomération de La Rochelle : automatisation complète des indicateurs de fréquentation des musées via un pipeline ETL (PDI/Pentaho), PostgreSQL et SAP BusinessObjects." />
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="../css/alternance-sheet.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script defer src="../js/darkmode.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="../en/Projet/alternance-CdALR.html" class="btn-lang">EN</a>
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="../about.html">Qui suis-je ?</a></li>
+        <li><a href="../etude.html">Mes études</a></li>
+        <li><a href="../projects.html">Projets</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <button id="toggle-darkmode" class="btn toggle-theme">
+        <img id="theme-icon" src="../asset/png/lune.png" alt="Icône mode sombre" style="width: 24px;">
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO BANNER -->
+    <section class="hero-section">
+      <div class="hero-badge">Alternance 2025 – 2026</div>
+      <h1 class="hero-title">Automatisation des indicateurs<br>de fréquentation des musées</h1>
+      <p class="hero-sub">Communauté d'Agglomération de La Rochelle · Unité Web &amp; Data (DSI)</p>
+      <div class="hero-tags">
+        <span class="tag tag-purple">PostgreSQL</span>
+        <span class="tag tag-blue">Pentaho PDI</span>
+        <span class="tag tag-green">SAP BusinessObjects</span>
+        <span class="tag tag-orange">Jenkins</span>
+        <span class="tag tag-teal">GitLab</span>
+        <span class="tag tag-pink">ETL / DWH</span>
+      </div>
+    </section>
+
+    <!-- CONTEXTE -->
+    <div class="grid-2">
+      <section class="card card-gradient-blue">
+        <div class="card-icon">🏛️</div>
+        <h2>Contexte</h2>
+        <p>
+          La Communauté d'Agglomération de La Rochelle regroupe <strong>28 communes</strong> et
+          plus de <strong>182 435 habitants</strong>. Au sein de la DSI, j'ai intégré l'unité
+          <strong>Web &amp; Data</strong> (5 titulaires + 1 consultant + moi en apprentissage),
+          dont la mission est d'alimenter le Système d'Information Décisionnel (SID),
+          de créer des rapports Dataviz et de gérer l'Open Data.
+        </p>
+        <p>
+          L'équipe est en pleine migration de l'outil décisionnel historique
+          <em>Vanilla</em> vers <strong>SAP BusinessObjects</strong> d'ici fin 2026,
+          ce qui m'a permis de piloter mes propres projets métiers de A à Z.
+        </p>
+      </section>
+
+      <section class="card card-gradient-purple">
+        <div class="card-icon">🎯</div>
+        <h2>Mission principale</h2>
+        <p>
+          Les musées de La Rochelle (Musée Maritime, Musée du Nouveau Monde, Muséum d'Histoire
+          Naturelle) utilisaient un logiciel de billetterie externe (<strong>GTS_vision / Vivaticket</strong>)
+          dont le suivi était entièrement <strong>manuel</strong> : exports bruts → recodage Excel → calcul des
+          indicateurs.
+        </p>
+        <ul>
+          <li>Perte de temps sur des tâches répétitives</li>
+          <li>Risque élevé d'erreurs de saisie</li>
+          <li>Hétérogénéité des calculs selon l'opérateur</li>
+          <li>Classification de billets non fiable</li>
+        </ul>
+        <p><strong>Objectif :</strong> remplacer ce processus manuel par une automatisation complète.</p>
+      </section>
+    </div>
+
+    <!-- STACK TECHNIQUE -->
+    <section class="card">
+      <h2>⚙️ Environnement technique</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-icon tech-db">🐘</div>
+          <div class="tech-name">PostgreSQL</div>
+          <div class="tech-desc">Entrepôt de données principal (DBeaver pour requêter &amp; auditer)</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon tech-etl">⚡</div>
+          <div class="tech-name">Pentaho PDI</div>
+          <div class="tech-desc">Moteur ETL visuel pour l'extraction, le nettoyage et la transformation</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon tech-orch">🔄</div>
+          <div class="tech-name">Jenkins</div>
+          <div class="tech-desc">Ordonnancement automatique des jobs ETL (nuit / week-end)</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon tech-bi">📊</div>
+          <div class="tech-name">SAP BusinessObjects</div>
+          <div class="tech-desc">Couche sémantique (IDT) et restitution Web Intelligence</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon tech-vcs">🌿</div>
+          <div class="tech-name">GitLab</div>
+          <div class="tech-desc">Versioning de tous les scripts et flux ETL en équipe</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon tech-src">🗄️</div>
+          <div class="tech-name">MS SQL Server</div>
+          <div class="tech-desc">Base source GTS_vision (+700 tables), Vivaticket</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIPELINE ETL -->
+    <section class="card">
+      <h2>🔁 Architecture du pipeline ETL</h2>
+      <p class="card-intro">
+        L'alimentation de l'infocentre est structurée en <strong>3 couches physiques</strong>
+        sous PostgreSQL garantissant traçabilité et qualité de la donnée.
+      </p>
+      <div class="pipeline">
+        <div class="pipeline-step step-source">
+          <div class="step-num">SOURCE</div>
+          <div class="step-title">MS SQL Server</div>
+          <div class="step-desc">Base GTS_vision<br>+700 tables / Vivaticket</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step step-dsa">
+          <div class="step-num">1 · DSA</div>
+          <div class="step-title">Data Staging Area</div>
+          <div class="step-desc">Copie brute structurelle<br>Sélection stricte des champs utiles</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step step-ods">
+          <div class="step-num">2 · ODS</div>
+          <div class="step-title">Operational Data Store</div>
+          <div class="step-desc">Merges, nettoyage<br>Logique métier &amp; flags booléens</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step step-dwh">
+          <div class="step-num">3 · DWH</div>
+          <div class="step-title">Data Warehouse</div>
+          <div class="step-desc">Schéma en étoile<br>Chargement complet sécurisé</div>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step step-sap">
+          <div class="step-num">RESTITUTION</div>
+          <div class="step-title">SAP BO</div>
+          <div class="step-desc">Univers sémantique<br>Rapports &amp; diffusion ciblée</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODÉLISATION -->
+    <section class="card">
+      <h2>🗂️ Modélisation du Data Warehouse (schéma en étoile)</h2>
+      <p class="card-intro">
+        Choix d'un <strong>schéma en étoile</strong> sous PostgreSQL pour la rapidité des requêtes
+        et la simplicité de lecture pour les utilisateurs métiers.
+      </p>
+      <div class="grid-2">
+        <div>
+          <h3>Tables de faits</h3>
+          <ul class="fact-list">
+            <li><span class="fact-badge">fait_ventes</span> Indicateurs de billetterie</li>
+            <li><span class="fact-badge">fait_reservations</span> Planification des salles</li>
+            <li><span class="fact-badge fact-sleep">fait_passages</span> Anticipation capteurs <em>(en sommeil)</em></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tables de dimensions</h3>
+          <ul class="dim-list">
+            <li><span class="dim-badge">dim_produit</span></li>
+            <li><span class="dim-badge">dim_contact</span></li>
+            <li><span class="dim-badge">dim_site</span></li>
+            <li><span class="dim-badge">dim_jour</span> – segmentation temporelle fine (année, mois, jour, tranche horaire)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <strong>💡 Décision d'architecture :</strong> conservation des identifiants Vivaticket d'origine
+        comme clés primaires → facilite la maintenance par les collègues sans générer de clés
+        artificielles redondantes.
+      </div>
+    </section>
+
+    <!-- EXPLORATION -->
+    <section class="card">
+      <h2>🔍 Exploration de la base source</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Défi : 700+ tables sans documentation</h3>
+          <p>
+            La base GTS_vision (MS SQL Server) est conçue pour des établissements culturels
+            à l'échelle du Louvre. Sans documentation technique disponible, j'ai dû reconstituer
+            le modèle de données moi-même.
+          </p>
+          <p>
+            <strong>Méthode :</strong> requête SQL sur le dictionnaire de données pour identifier
+            les <strong>300 tables actives</strong> (les 400 autres étaient vides à l'échelle de La Rochelle).
+          </p>
+        </div>
+        <div>
+          <h3>Tracé de la donnée</h3>
+          <p>
+            Exploration de jointure en jointure depuis des points d'entrée connus (tables des produits,
+            des catégories) jusqu'aux tables des ventes, en analysant les clés primaires et étrangères.
+          </p>
+          <p>
+            Ce travail a abouti à un <strong>schéma conceptuel simplifié</strong> qui a servi de base
+            à tous mes flux d'alimentation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA QUALITY & AUTOMATISATION -->
+    <section class="card card-dark-accent">
+      <h2>🤖 Automatisation &amp; Data Quality</h2>
+      <div class="grid-3">
+        <div class="quality-item">
+          <div class="quality-icon">🌙</div>
+          <h3>Exécution nocturne</h3>
+          <p>Jenkins déclenche automatiquement les jobs PDI chaque nuit en période creuse.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon">🛡️</div>
+          <h3>Sécurisation du chargement</h3>
+          <p>Si une transformation échoue en amont, la chaîne s'arrête — empêchant de vider les tables sans données de remplacement prêtes.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-icon">📧</div>
+          <h3>Alertes Data Quality</h3>
+          <p>Détection automatique des billets classés dans deux catégories contradictoires → alerte mail envoyée aux agents du musée.</p>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <strong>Règle métier ODS :</strong> les accompagnateurs de groupes (enseignants, encadrants)
+        reçoivent un <code>flag booléen accompagnant = True</code> pour éviter qu'ils ne
+        faussent les statistiques des catégories principales.
+      </div>
+    </section>
+
+    <!-- SAP BO -->
+    <section class="card">
+      <h2>📈 Couche sémantique &amp; Reporting (SAP BO)</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Univers SAP IDT</h3>
+          <p>
+            Traduction des champs techniques en vocabulaire métier compréhensible par les conservateurs :
+            <code>id_prod</code> → <em>«Nom du produit»</em>, <code>libelle</code> → <em>«Catégorie de public»</em>.
+          </p>
+          <p>
+            Mise en place de <strong>contextes de jointure</strong> pour éviter les ambiguïtés de parcours
+            entre les tables de faits partagées (Ventes / Réservations).
+          </p>
+        </div>
+        <div>
+          <h3>Rapport de fréquentation</h3>
+          <ul>
+            <li>📅 <strong>Tableau N vs N-1</strong> — comparatif mensuel</li>
+            <li>💰 <strong>Analyse financière</strong> — billetterie vs boutiques</li>
+            <li>🥧 <strong>Pie chart publics</strong> — scolaires / touristes / abonnés</li>
+            <li>📤 <strong>Diffusion ciblée</strong> — export Excel filtré par musée, envoyé par e-mail mensuel automatique</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉSULTATS -->
+    <section class="card">
+      <h2>🏆 Résultats &amp; Impact</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-number">3</div>
+          <div class="result-label">Musées couverts<br><small>Maritime · Nouveau Monde · Muséum</small></div>
+        </div>
+        <div class="result-card">
+          <div class="result-number">0</div>
+          <div class="result-label">Saisie manuelle<br><small>Zéro copier-coller Excel mensuel</small></div>
+        </div>
+        <div class="result-card">
+          <div class="result-number">100%</div>
+          <div class="result-label">Automatisé<br><small>Pipeline ETL nocturne via Jenkins</small></div>
+        </div>
+        <div class="result-card">
+          <div class="result-number">300</div>
+          <div class="result-label">Tables cartographiées<br><small>Sur 700+ dans GTS_vision</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BILAN -->
+    <section class="card">
+      <h2>🎓 Bilan personnel</h2>
+      <p>
+        Ce projet m'a permis de gérer de bout en bout un vrai projet Data Engineering en contexte professionnel :
+        analyse du besoin métier, exploration d'une base de données inconnue, modélisation DWH,
+        construction du pipeline ETL, automatisation et restitution finale aux utilisateurs.
+      </p>
+      <p>
+        Il a confirmé mon attrait pour la structuration et la fiabilisation de la donnée tout en m'ouvrant
+        vers son exploitation statistique avancée. Mon objectif à la rentrée est d'intégrer un cursus en
+        <strong>Intelligence Artificielle ou le Master DIGISPORT</strong>, pour mettre ces compétences au service
+        de la modélisation et de la prédiction des performances sportives.
+      </p>
+      <a href="../projects.html" class="btn-back">← Retour aux projets</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jules Dubuy</p>
+  </footer>
+</body>
+</html>

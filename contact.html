@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Me contacter | Jules Dubuy</title>
-  
-  <link rel="stylesheet" href="css/contact.css">
-  
-  <link rel="stylesheet" href="css/navbar.css">
-  
+  <meta name="description" content="Contactez Jules Dubuy – Data Engineer étudiant. Email, LinkedIn, GitHub." />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script defer src="js/darkmode.js"></script>
   <script defer src="js/site-dynamics.js"></script>
 </head>
@@ -42,21 +43,32 @@
 
       <div class="contact__methods">
         
-        <div class="contact__block">
+        <div class="contact__block" id="contact-email">
+          <div class="contact__icon icon-email">📧</div>
           <h3>Email</h3>
           <p><a href="mailto:jules.dubuy1810@gmail.com">jules.dubuy1810@gmail.com</a></p>
         </div>
 
-        <div class="contact__block">
+        <div class="contact__block" id="contact-linkedin">
+          <div class="contact__icon icon-linkedin">💼</div>
           <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/jules-dubuy-02388a2b0" target="_blank">Profil LinkedIn</a></p>
+          <p><a href="https://www.linkedin.com/in/jules-dubuy-02388a2b0" target="_blank" rel="noopener">Profil LinkedIn →</a></p>
         </div>
 
-        <div class="contact__block">
+        <div class="contact__block" id="contact-github">
+          <div class="contact__icon icon-github">🐙</div>
           <h3>GitHub</h3>
-          <p><a href="https://github.com/JulesDubuy" target="_blank">github.com/JulesDubuy</a></p>
+          <p><a href="https://github.com/JulesDubuy" target="_blank" rel="noopener">github.com/JulesDubuy →</a></p>
         </div>
 
+      </div>
+
+      <div class="contact__cv">
+        <div class="contact__cv-text">
+          <h2>📄 Mon CV</h2>
+          <p>Téléchargez mon curriculum vitae pour en savoir plus sur mon parcours.</p>
+        </div>
+        <a href="CV_DUBUY_Jules.pdf" download class="contact__cv-btn">Télécharger le CV ↓</a>
       </div>
     </section>
   </main>
