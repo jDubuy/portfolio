@@ -1,91 +1,208 @@
+/* =============================================
+   projectsheet.css — page fiche projet générique
+   Design premium : dark glassmorphism + accents néon
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ── Variables ──────────────────────────────── */
 :root {
-  --bg: #f4f7ff;
+  --bg: #f0f4ff;
   --surface: #ffffff;
-  --text: #1b2132;
-  --muted: #5f6981;
-  --primary: #6f4bff;
-  --border: rgba(27, 33, 50, 0.11);
-  --shadow: 0 16px 42px rgba(19, 29, 62, 0.12);
+  --surface-2: #f7f9ff;
+  --text: #1a2240;
+  --muted: #5a6480;
+  --primary: #5b3de0;
+  --primary-light: #7c5cf6;
+  --accent-blue: #3b82f6;
+  --accent-teal: #06b6d4;
+  --accent-green: #10b981;
+  --accent-orange: #f59e0b;
+  --accent-pink: #ec4899;
+  --border: rgba(90, 100, 128, 0.14);
+  --shadow-sm: 0 2px 12px rgba(19, 29, 80, 0.08);
+  --shadow-md: 0 8px 32px rgba(19, 29, 80, 0.12);
+  --shadow-lg: 0 20px 60px rgba(19, 29, 80, 0.16);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --font: 'Inter', sans-serif;
+  
+  /* Compatibilité avec les ombres inline existantes */
+  --shadow: var(--shadow-md);
 }
 
-*,
-*::before,
-*::after {
+/* ── Reset ──────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  color: var(--text);
+  font-family: var(--font);
   background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  min-height: 100vh;
 }
 
+/* ── Main layout ────────────────────────────── */
 main {
-  width: min(980px, calc(100% - 2rem));
-  margin: 2rem auto 3rem;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 2rem auto 4rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: clamp(1rem, 1.8vw, 1.4rem);
-  box-shadow: var(--shadow);
+/* ── HERO (First section containing h1) ──────── */
+main > section:first-of-type {
+  background: linear-gradient(135deg, #1e0a5e 0%, #3b1a9a 40%, #5b3de0 75%, #7c5cf6 100%);
+  border-radius: var(--radius);
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: none;
 }
 
-h1,
-h2 {
-  margin-top: 0;
-  margin-bottom: 0.65rem;
-  color: var(--primary);
+main > section:first-of-type::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(124, 92, 246, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.25) 0%, transparent 55%);
+  pointer-events: none;
 }
 
-h1 {
-  font-size: clamp(1.45rem, 3.3vw, 2.2rem);
+main > section:first-of-type h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  position: relative;
 }
 
-h2 {
-  font-size: clamp(1.12rem, 2.6vw, 1.5rem);
-}
-
-p,
-li {
-  color: #3d4861;
+main > section:first-of-type p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
   line-height: 1.7;
 }
 
-ul {
-  margin: 0.2rem 0 0;
-  padding-left: 1.2rem;
+/* ── Cards (Other sections) ──────────────────── */
+main > section:not(:first-of-type) {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.4rem, 2.5vw, 2rem);
+  box-shadow: var(--shadow-md);
 }
 
+main > section:not(:first-of-type) h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+main > section:not(:first-of-type) h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+main > section:not(:first-of-type) p,
+main > section:not(:first-of-type) li {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+main > section:not(:first-of-type) ul,
+main > section:not(:first-of-type) ol {
+  padding-left: 1.3rem;
+  margin-top: 0.5rem;
+}
+
+main > section:not(:first-of-type) li {
+  margin-bottom: 0.3rem;
+}
+
+/* Compatibilité images dans les sections */
+main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+}
+
+/* Éléments de code */
+code {
+  background: rgba(91, 61, 224, 0.12);
+  color: var(--primary);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── Back button ────────────────────────────── */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: max-content;
+  justify-self: start;
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(91,61,224,0.4);
+}
+
+/* ── Footer ─────────────────────────────────── */
 footer {
   text-align: center;
   color: var(--muted);
-  padding: 1.2rem;
+  padding: 1.5rem;
+  font-size: 0.85rem;
 }
 
-@media (max-width: 680px) {
-  main {
-    width: calc(100% - 1.2rem);
-    margin-top: 1.2rem;
-  }
-}
-
+/* ── Dark mode ──────────────────────────────── */
 body.dark-mode {
-  --bg: #0e1220;
-  --surface: #11162a;
-  --text: #edf1ff;
-  --muted: #a5afc8;
+  --bg: #080d1f;
+  --surface: #0f1428;
+  --surface-2: #131930;
+  --text: #e8edff;
+  --muted: #8b96bc;
   --primary: #9c86ff;
-  --border: rgba(237, 241, 255, 0.15);
-  --shadow: 0 16px 42px rgba(0, 0, 0, 0.4);
+  --primary-light: #b8a6ff;
+  --border: rgba(200, 210, 255, 0.1);
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.6);
 }
 
-body.dark-mode p,
-body.dark-mode li {
-  color: #c8d1ea;
+body.dark-mode code {
+  background: rgba(156, 134, 255, 0.15);
+  color: var(--primary-light);
 }
