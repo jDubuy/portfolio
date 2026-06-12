@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Mes projets | Jules Dubuy</title>
+  <title>Stage Ardo – Refonte et automatisation des outils de gestion | Jules Dubuy</title>
+  <meta name="description" content="Projet de stage de 10 semaines chez Ardo (site ALS) : refonte de la base de données bible produits via Python, automatisation du planning hebdomadaire, du MRP et du CRP annuel via Excel VBA." />
   <!-- Feuilles de style -->
   <link rel="stylesheet" href="../css/projectsheet.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script defer src="../js/darkmode.js"></script>
 </head>
 <body>
@@ -19,9 +23,9 @@
       <ul>
         <li><a href="../index.html">Accueil</a></li>
         <li><a href="../about.html">Qui suis-je ?</a></li>
+        <li><a href="../etude.html">Mes études</a></li>
         <li><a href="../projects.html">Projets</a></li>
         <li><a href="../contact.html">Contact</a></li>
-        <li><a href="../etude.html">Mes études</a></li>
       </ul>
       
       <button id="toggle-darkmode" class="btn toggle-theme">
@@ -31,56 +35,220 @@
   </header>
 
 <main>
-  <section>
+  <!-- HERO BANNER -->
+  <section class="hero-section">
     <div class="logo-container" style="text-align: center; margin-bottom: 1.5rem;">
-      <img src="../asset/png/logo-ardo.png" alt="Logo Ardo" style="max-height: 85px; width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.15)); margin-top: 0; box-shadow: none;" />
+      <img src="../asset/png/logo-ardo.png" alt="Logo Ardo" style="max-height: 85px; width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2)); margin-top: 0; box-shadow: none;" />
     </div>
-    <h1>Stage : Refonte de base de données et outils de gestion</h1>
-    <p>
-      J'ai réalisé ce stage de 10 semaines au sein du groupe Ardo (site ALS à Saint-Sever), dans le service conditionnement. 
-      Mon objectif principal était d’améliorer la fiabilité et la fluidité des fichiers internes de production, en automatisant leur gestion via des outils sur mesure.
-    </p>
+    <div class="hero-badge">Stage BUT SD 2024 – 2025</div>
+    <h1 class="hero-title">Refonte et automatisation des outils<br>de gestion de conditionnement</h1>
+    <p class="hero-sub">Ardo Group · Site Aquitaine Légumes Surgelés (ALS, Saint-Sever)</p>
+    <div class="hero-tags">
+      <span class="tag tag-purple">Python (Pandas, Openpyxl)</span>
+      <span class="tag tag-blue">Excel / VBA</span>
+      <span class="tag tag-green">Statistiques (R)</span>
+      <span class="tag tag-orange">AS400</span>
+      <span class="tag tag-teal">MRP / CRP</span>
+    </div>
   </section>
 
-  <section>
-    <h2>Objectifs du projet</h2>
+  <!-- CONTEXTE & MISSION PRINCIPALE -->
+  <div class="grid-2">
+    <section class="card card-gradient-blue">
+      <div class="card-icon">🏭</div>
+      <h2>Contexte du stage</h2>
+      <p>
+        J’ai réalisé ce stage de <strong>10 semaines</strong> au sein du service conditionnement du site
+        <strong>ALS (Aquitaine Légumes Surgelés)</strong> du groupe Ardo, un acteur majeur européen des légumes surgelés. 
+        Le site assure l'emballage final des produits pour des clients de référence (Picard, Findus, Lidl...) à travers 
+        <strong>3 lignes de production</strong> (lignes 1 &amp; 2 pour sachets de 400g à 2,7kg, ligne 3 pour vracs de mélange et sachets de 10kg+).
+      </p>
+      <p>
+        Mon tuteur professionnel, <strong>Olivier Mas</strong>, m'a confié la modernisation transversale des outils d'aide à la décision du service.
+      </p>
+    </section>
+
+    <section class="card card-gradient-purple">
+      <div class="card-icon">🎯</div>
+      <h2>Mission principale</h2>
+      <p>
+        L'objectif central était de fiabiliser la chaîne de planification et de configuration de production. Avant mon arrivée, 
+        les données produits et les plannings étaient fragmentés, gérés manuellement et sujets à des erreurs de saisie fréquentes.
+      </p>
+      <ul>
+        <li><strong>Refondre</strong> la "bible produits" en une base de données consolidée unique</li>
+        <li><strong>Automatiser</strong> le planning de production hebdomadaire et le calcul des besoins en consommables (MRP)</li>
+        <li><strong>Développer</strong> un outil de planification annuelle de charge (CRP) adapté aux spécificités du site</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ENVIRONNEMENT TECHNIQUE -->
+  <section class="card">
+    <h2>⚙️ Environnement technique</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon">🐍</div>
+        <div class="tech-name">Python</div>
+        <div class="tech-desc">Traitement et nettoyage de données (Pandas, Openpyxl, Regex, Unicodedata)</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📊</div>
+        <div class="tech-name">Excel &amp; VBA</div>
+        <div class="tech-desc">Création de macros d'automatisation, formulaires de saisie et de tableaux de bord MRP / CRP</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📐</div>
+        <div class="tech-name">R &amp; RStudio</div>
+        <div class="tech-desc">Analyse statistique et normalisation des cadences réelles par déciles</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">💾</div>
+        <div class="tech-name">AS400</div>
+        <div class="tech-desc">Système ERP d'extraction des commandes et des états de stocks de l'usine</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📋</div>
+        <div class="tech-name">MRP</div>
+        <div class="tech-desc">Automatisation du calcul des besoins hebdomadaires en films plastiques et cartons</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">⏳</div>
+        <div class="tech-name">CRP</div>
+        <div class="tech-desc">Planification annuelle des charges et capacités de production par ligne</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION 1 : LA BIBLE PRODUITS -->
+  <section class="card">
+    <h2>🗂️ Mission 1 – Refonte et automatisation de la Bible Produits</h2>
+    <p class="card-intro">
+      La "bible produits" est la base de référence de toutes les spécifications techniques de conditionnement du site.
+    </p>
+    <div class="grid-2">
+      <div>
+        <h3>Nettoyage et consolidation</h3>
+        <p>
+          En utilisant <strong>Python</strong>, j'ai développé un script central croisant trois fichiers (l'ancienne bible, 
+          les plannings et les fiches de contrôle conducteur). Le programme a permis de détecter les incohérences, 
+          de fusionner intelligemment les fiches et d'exporter les anomalies critiques pour correction manuelle.
+        </p>
+        <h3>Intégration de règles métiers</h3>
+        <ul>
+          <li>Association automatique du type de grilles de tri par mots-clés (ex: détection de "brocoli")</li>
+          <li>Calcul automatisé du poids de vrac théorique total par palette</li>
+          <li>Formulaire Excel sécurisé pour l'ajout de nouveaux produits avec contrôles de cohérence</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Normalisation statistique des cadences</h3>
+        <p>
+          Pour fiabiliser la planification, les cadences de production réelles mesurées en palettes/heure présentaient de fortes disparités (arrêts, pannes). 
+          J'ai appliqué une **méthode robuste d'exclusion des déciles extrêmes (les 10% inférieurs et 10% supérieurs)** à l'aide d'un script <strong>R</strong>.
+        </p>
+        <p>
+          Cette moyenne nettoyée reflète désormais fidèlement la cadence standard de production.
+        </p>
+        <div class="highlight-box">
+          <strong>⚠️ Limite rencontrée :</strong> L'automatisation complète de la configuration de palettisation a été écartée, car de nombreux clients exigent des schémas d'empilement spécifiques qui ne suivent aucune règle générale modélisable.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION 2 : PLANNING HEBDOMADAIRE & MRP -->
+  <section class="card">
+    <h2>📅 Mission 2 – Refonte et automatisation du Planning &amp; MRP</h2>
+    <p class="card-intro">
+      Le planning de production hebdomadaire est utilisé pour organiser le travail et anticiper les consommables nécessaires.
+    </p>
+    <div class="grid-2">
+      <div>
+        <h3>Optimisation du Planning</h3>
+        <p>
+          J'ai développé plusieurs macros VBA pour répondre aux besoins ergonomiques de l'assistante conditionnement :
+        </p>
+        <ul>
+          <li><strong>Mise à jour automatique :</strong> Importation à l'ouverture des spécifications techniques à jour depuis la bible produits.</li>
+          <li><strong>Propagation dynamique :</strong> Une macro scanne et applique les formules de recherche sur les lignes d'un bloc de production jusqu'au mot-clé "STOP".</li>
+          <li><strong>Remise à zéro :</strong> Nettoyage en un clic des données de production de la semaine écoulée.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Automatisation du MRP (Material Requirement Planning)</h3>
+        <p>
+          Le module MRP développé automatise la comparaison entre les besoins de production et les stocks réels :
+        </p>
+        <ul>
+          <li><strong>Pour les films :</strong> Analyse des besoins, comparaison au fichier de stock et vérification des commandes fournisseur en cours de livraison.</li>
+          <li><strong>Pour les cartons :</strong> Prise en compte de la transition entre deux codes cartons (ancienne et nouvelle référence).</li>
+          <li>Surlignage automatique en <strong>rouge</strong> de tout consommable en rupture.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION 3 : OUTIL CRP ANNUEL -->
+  <section class="card">
+    <h2>📈 Mission 3 – Automatisation de l'outil CRP annuel</h2>
+    <p class="card-intro">
+      L'outil CRP (Capacité de Réponse à la Production) permet aux responsables d'anticiper la charge annuelle globale et de prévoir les périodes de forte activité ou de maintenance.
+    </p>
+    <p>
+      Le fichier initial fourni par le groupe Ardo a été entièrement refondu et adapté aux réalités locales du site ALS :
+    </p>
     <ul>
-      <li>Refondre la “bible produits” en une base de données unique, fiable et structurée</li>
-      <li>Automatiser la synchronisation des données entre les différents fichiers utilisés</li>
-      <li>Normaliser les temps de production pour améliorer la planification</li>
-      <li>Créer un outil CRP pour la planification annuelle</li>
+      <li><strong>Distribution de charge :</strong> Répartition équitable (50/50) des commandes sur les lignes 1 et 2, techniquement identiques.</li>
+      <li><strong>Prise en compte du vrac :</strong> Réintégration automatique des vracs de type "mélange" dans le forecast de capacité de la ligne 3.</li>
+      <li><strong>Dashboard de capacité :</strong> Représentation graphique de la charge prévue face à un <strong>seuil critique fixé à 80 % de la capacité</strong>, facilitant les alertes visuelles.</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Méthodologie</h2>
-    <p>
-      J’ai utilisé Python (pandas, openpyxl, etc.) pour automatiser l’analyse, le nettoyage et la fusion des fichiers. 
-      Ensuite, j’ai intégré des macros dans Excel pour automatiser le planning hebdomadaire (MRP) et synchroniser les informations produits. 
-      J’ai aussi mis en place une normalisation statistique des cadences.
-    </p>
+  <!-- RÉSULTATS -->
+  <section class="card">
+    <h2>🏆 Résultats &amp; Impact</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">3</div>
+        <div class="result-label">Lignes de production<br><small>Lignes 1, 2 et 3 modélisées</small></div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">1</div>
+        <div class="result-label">Bible consolidée<br><small>Dédoublonnée et nettoyée</small></div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">100%</div>
+        <div class="result-label">MRP automatisé<br><small>Plus de saisie manuelle des stocks</small></div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">80%</div>
+        <div class="result-label">Seuil de capacité CRP<br><small>Alerte visuelle automatique</small></div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Résultats obtenus</h2>
-    <ul>
-      <li>Un fichier de production synchronisé automatiquement à la bible produits</li>
-      <li>Un planning hebdomadaire réinitialisable, plus fiable et simple d'utilisation</li>
-      <li>Un MRP automatique permettant d’anticiper les manques de consommables</li>
-      <li>Un outil CRP sur mesure pour planifier la charge annuelle</li>
-    </ul>
+  <!-- BILANS -->
+  <section class="card">
+    <h2>🎓 Bilan personnel &amp; professionnel</h2>
+    <p>
+      Ce stage m'a offert une immersion concrète dans la gestion des flux d'informations industriels. 
+      Sur le plan professionnel, j'ai pu mobiliser et approfondir mes compétences en ingénierie de données (Python, SQL, VBA, R) et les appliquer à des problématiques concrètes. 
+      L'incident survenu lors de l'intégration de données non validées m'a appris la valeur fondamentale de la mise en place de processus de validation stricts avant tout déploiement en production.
+    </p>
+    <p>
+      Sur le plan personnel, bien que la réalisation des projets en autonomie ait été formatrice, elle m'a permis de réaliser mon besoin d'évoluer au sein d'environnements plus collaboratifs, 
+      où les discussions techniques et fonctionnelles sont partagées. 
+      Aussi, j'aspire désormais à des rôles orientés vers l'analyse de données et la business intelligence plutôt que le développement pur.
+    </p>
+    <a href="../projects.html" class="btn-back">← Retour aux projets</a>
   </section>
 
-  <section>
-    <h2>Conclusion</h2>
-    <p>
-      Ce stage m’a permis d’appliquer mes compétences en science des données dans un cadre concret, 
-      en travaillant sur des outils utiles et immédiatement exploitables par l’entreprise. 
-      Il m’a aussi sensibilisé aux contraintes industrielles et à l’importance de l’ergonomie dans les outils d’aide à la décision.
-    </p>
-  </section>
-  <a href="../projects.html" class="btn-back">← Retour aux projets</a>
 </main>
+
+<footer>
+  <p>&copy; 2025 Jules Dubuy</p>
+</footer>
 
 </body>
 </html>

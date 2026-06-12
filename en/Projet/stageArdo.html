@@ -4,10 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>My Projects | Jules Dubuy</title>
+  <title>Internship Ardo – Redesign and automation of management tools | Jules Dubuy</title>
+  <meta name="description" content="10-week internship project at Ardo (ALS site): redesign of the product bible database via Python, automation of the weekly schedule, MRP and annual CRP via Excel VBA." />
   <!-- Stylesheets -->
   <link rel="stylesheet" href="../../css/projectsheet.css" />
   <link rel="stylesheet" href="../../css/navbar.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script defer src="../../js/darkmode.js"></script>
 </head>
 <body>
@@ -31,56 +35,220 @@
   </header>
 
 <main>
-  <section>
+  <!-- HERO BANNER -->
+  <section class="hero-section">
     <div class="logo-container" style="text-align: center; margin-bottom: 1.5rem;">
-      <img src="../../asset/png/logo-ardo.png" alt="Ardo Logo" style="max-height: 85px; width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.15)); margin-top: 0; box-shadow: none;" />
+      <img src="../../asset/png/logo-ardo.png" alt="Ardo Logo" style="max-height: 85px; width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2)); margin-top: 0; box-shadow: none;" />
     </div>
-    <h1>Internship: Database Redesign and Management Tools</h1>
-    <p>
-      I completed this 10-week internship within the Ardo group (ALS site in Saint-Sever), in the packaging department. 
-      My main objective was to improve the reliability and fluidity of internal production files by automating their management through custom tools.
-    </p>
+    <div class="hero-badge">Internship BUT SD 2024 – 2025</div>
+    <h1 class="hero-title">Redesign and automation of<br>packaging management tools</h1>
+    <p class="hero-sub">Ardo Group · Aquitaine Légumes Surgelés Site (ALS, Saint-Sever)</p>
+    <div class="hero-tags">
+      <span class="tag tag-purple">Python (Pandas, Openpyxl)</span>
+      <span class="tag tag-blue">Excel / VBA</span>
+      <span class="tag tag-green">Statistics (R)</span>
+      <span class="tag tag-orange">AS400</span>
+      <span class="tag tag-teal">MRP / CRP</span>
+    </div>
   </section>
 
-  <section>
-    <h2>Project Objectives</h2>
+  <!-- CONTEXT & MAIN MISSION -->
+  <div class="grid-2">
+    <section class="card card-gradient-blue">
+      <div class="card-icon">🏭</div>
+      <h2>Internship Context</h2>
+      <p>
+        I completed this <strong>10-week</strong> internship in the packaging department of the
+        <strong>ALS (Aquitaine Légumes Surgelés)</strong> site of the Ardo group, a major European player in frozen vegetables. 
+        The site handles the final packaging of vegetables for major brands (Picard, Findus, Lidl...) using 
+        <strong>3 production lines</strong> (lines 1 &amp; 2 for bags from 400g to 2.7kg, line 3 for bulk mixtures and bags of 10kg+).
+      </p>
+      <p>
+        My industrial tutor, <strong>Olivier Mas</strong>, entrusted me with the cross-cutting modernization of the department's decision-support tools.
+      </p>
+    </section>
+
+    <section class="card card-gradient-purple">
+      <div class="card-icon">🎯</div>
+      <h2>Main Mission</h2>
+      <p>
+        The central objective was to secure the planning and configuration flow of production. Before my arrival, 
+        product data and schedules were fragmented, managed manually, and prone to frequent entry errors.
+      </p>
+      <ul>
+        <li><strong>Redesign</strong> the "product bible" into a single, consolidated reference database</li>
+        <li><strong>Automate</strong> the weekly production scheduling and calculation of material requirements (MRP)</li>
+        <li><strong>Develop</strong> an annual production load planning tool (CRP) adapted to local site constraints</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- TECHNICAL ENVIRONMENT -->
+  <section class="card">
+    <h2>⚙️ Technical Environment</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon">🐍</div>
+        <div class="tech-name">Python</div>
+        <div class="tech-desc">Data cleaning and processing (Pandas, Openpyxl, Regex, Unicodedata)</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📊</div>
+        <div class="tech-name">Excel &amp; VBA</div>
+        <div class="tech-desc">Automation macros, input forms, and MRP / CRP dashboards</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📐</div>
+        <div class="tech-name">R &amp; RStudio</div>
+        <div class="tech-desc">Statistical analysis and cadence normalization by deciles</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">💾</div>
+        <div class="tech-name">AS400</div>
+        <div class="tech-desc">ERP system for extracting raw customer orders and factory stock states</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📋</div>
+        <div class="tech-name">MRP</div>
+        <div class="tech-desc">Automating the calculation of weekly requirements for plastic films and cartons</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">⏳</div>
+        <div class="tech-name">CRP</div>
+        <div class="tech-desc">Annual planning of production loads and capacities per line</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION 1 : THE PRODUCT BIBLE -->
+  <section class="card">
+    <h2>🗂️ Mission 1 – Redesign and Automation of the Product Bible</h2>
+    <p class="card-intro">
+      The "product bible" is the reference database of all technical packaging specifications for the ALS site.
+    </p>
+    <div class="grid-2">
+      <div>
+        <h3>Cleaning and Consolidation</h3>
+        <p>
+          Using <strong>Python</strong>, I developed a script to merge three data sources (the old bible, 
+          weekly schedules, and operator control sheets). The program detected inconsistencies, 
+          intelligently merged duplicate fields, and exported critical anomalies for manual correction.
+        </p>
+        <h3>Business Rules Integration</h3>
+        <ul>
+          <li>Automatic sorting grid type association using keyword detection (e.g., detecting "brocoli")</li>
+          <li>Automated calculation of total theoretical bulk weight per pallet</li>
+          <li>Secure Excel input form for adding new products with consistency controls</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Statistical Cadence Normalization</h3>
+        <p>
+          To make planning reliable, actual production cadences (measured in pallets/hour) showed high variability due to machine stops and breakdowns. 
+          I implemented a **robust statistical method excluding extreme deciles (lowest 10% and highest 10%)** using an <strong>R</strong> script.
+        </p>
+        <p>
+          This cleaned average is now used in planning to reflect standard production rates.
+        </p>
+        <div class="highlight-box">
+          <strong>⚠️ Constraint encountered:</strong> Complete automation of palettisation configuration was discarded because many customers demand specific stacking layouts that do not follow general modelable rules.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION 2 : WEEKLY SCHEDULING & MRP -->
+  <section class="card">
+    <h2>📅 Mission 2 – Redesign and Automation of Scheduling &amp; MRP</h2>
+    <p class="card-intro">
+      The weekly scheduling file is utilized to organize line work and anticipate necessary consumables.
+    </p>
+    <div class="grid-2">
+      <div>
+        <h3>Scheduling Optimization</h3>
+        <p>
+          I developed several VBA macros to improve the ergonomics of the packaging assistant's weekly workspace:
+        </p>
+        <ul>
+          <li><strong>Automatic Sync:</strong> Real-time technical specification imports from the product bible upon opening the file.</li>
+          <li><strong>Dynamic Formula Propagation:</strong> A macro scans and propagates search formulas across production blocks until the keyword "STOP" is reached.</li>
+          <li><strong>Reset Button:</strong> One-click clearing of manually typed data from the previous week's schedule.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>MRP (Material Requirement Planning) Automation</h3>
+        <p>
+          The MRP module automates comparisons between production plans and raw inventory files:
+        </p>
+        <ul>
+          <li><strong>For films:</strong> Analyzes requirements, checks inventory, and references outstanding supplier orders.</li>
+          <li><strong>For cartons:</strong> Automatically handles transitions between two carton reference codes (old and new references).</li>
+          <li>Highlights in <strong>red</strong> any consumable facing a stock-out.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION 3 : ANNUAL CRP TOOL -->
+  <section class="card">
+    <h2>📈 Mission 3 – Automation of the Annual CRP Tool</h2>
+    <p class="card-intro">
+      The CRP (Capacity Requirement Planning) tool allows management to anticipate the annual production load, identifying peaks or periods for maintenance.
+    </p>
+    <p>
+      The initial model file provided by the Ardo group was fully redesigned to fit ALS local constraints:
+    </p>
     <ul>
-      <li>Redesign the "product bible" into a single, reliable and structured database</li>
-      <li>Automate data synchronization between different files in use</li>
-      <li>Standardize production times to improve planning</li>
-      <li>Create a CRP tool for annual planning</li>
+      <li><strong>Load Balancing:</strong> Automatically distributes orders 50/50 between lines 1 and 2, which are technically identical.</li>
+      <li><strong>Bulk Mixtures:</strong> Integrates bulk mixture products automatically into the capacity forecast of line 3.</li>
+      <li><strong>Capacity Dashboard:</strong> Graphic visual tracking of the load compared to a <strong>critical warning threshold set at 80% capacity</strong>.</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Methodology</h2>
-    <p>
-      I used Python (pandas, openpyxl, etc.) to automate file analysis, cleaning, and merging. 
-      Then I integrated macros into Excel to automate weekly scheduling (MRP) and synchronize product information. 
-      I also implemented statistical standardization of production rates.
-    </p>
+  <!-- RESULTS -->
+  <section class="card">
+    <h2>🏆 Results &amp; Impact</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-number">3</div>
+        <div class="result-label">Production Lines<br><small>Lines 1, 2, and 3 modeled</small></div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">1</div>
+        <div class="result-label">Consolidated Bible<br><small>Cleaned and deduplicated</small></div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">100%</div>
+        <div class="result-label">Automated MRP<br><small>No manual inventory copy-pasting</small></div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">80%</div>
+        <div class="result-label">CRP Capacity Alert<br><small>Visual warning threshold</small></div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Results Achieved</h2>
-    <ul>
-      <li>A production file automatically synchronized to the product bible</li>
-      <li>A resettable weekly schedule, more reliable and simple to use</li>
-      <li>An automatic MRP allowing anticipation of consumable shortages</li>
-      <li>A custom CRP tool for planning annual workload</li>
-    </ul>
+  <!-- BILANS -->
+  <section class="card">
+    <h2>🎓 Personal &amp; Professional Bilan</h2>
+    <p>
+      This internship offered me hands-on immersion in managing industrial information flows. 
+      Professionally, I applied and deepened my data engineering skills (Python, SQL, VBA, R) in a concrete environment. 
+      The incident of launching unvalidated data into production taught me the crucial value of establishing strict validation procedures before any deployment.
+    </p>
+    <p>
+      Personally, while working independently was highly educational, it made me realize my need to work in more collaborative environments, 
+      where technical and functional discussions are shared. 
+      Furthermore, I now aspire to roles focused on data analysis and business intelligence rather than raw software development.
+    </p>
+    <a href="../../en/projects.html" class="btn-back">← Back to projects</a>
   </section>
 
-  <section>
-    <h2>Conclusion</h2>
-    <p>
-      This internship allowed me to apply my data science skills in a concrete context, 
-      working on useful tools immediately exploitable by the company. 
-      It also made me aware of industrial constraints and the importance of ergonomics in decision-support tools.
-    </p>
-  </section>
-  <a href="../../en/projects.html" class="btn-back">← Back to projects</a>
 </main>
+
+<footer>
+  <p>&copy; 2025 Jules Dubuy</p>
+</footer>
 
 </body>
 </html>
